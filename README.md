@@ -1,3 +1,3 @@
-# grupp17
+# iMat - grupp17
 
 Matapplikation
