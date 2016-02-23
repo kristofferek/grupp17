@@ -14,14 +14,19 @@ import javafx.fxml.Initializable;
  *
  * @author Kristoffer
  */
+
+
+
+
 public class MainWindowController implements Initializable {
 
+    private ResourceBundle rb;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.rb = rb;
     }    
     
 }
