@@ -7,7 +7,16 @@ package g17;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -21,6 +30,22 @@ import javafx.fxml.Initializable;
 public class MainWindowController implements Initializable {
 
     private ResourceBundle rb;
+    @FXML private MenuBar menuBar;
+    @FXML private TextField searchTextField;
+    @FXML private Button homeButton;
+    @FXML private Button searchButton;
+    @FXML private Button rundturButton;
+    @FXML private Button historyButton;
+    @FXML private Button cartButton;
+    @FXML private Button favoritehButton;
+    @FXML private Label priceLabel;
+    @FXML private ScrollPane mainView;
+    @FXML private AnchorPane checkoutView;
+    @FXML private ListView categoryListView;
+    
+    
+    
+    
     /**
      * Initializes the controller class.
      */
