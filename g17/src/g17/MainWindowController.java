@@ -20,6 +20,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+
 /**
  * FXML Controller class
  *
@@ -45,9 +46,9 @@ public class MainWindowController implements Initializable {
     @FXML private AnchorPane checkoutView;
     @FXML private ListView categoryListView;
 
-    private
-    
-    
+    private Prod
+
+
     
     
     /**
