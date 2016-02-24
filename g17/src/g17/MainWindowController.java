@@ -37,15 +37,18 @@ public class MainWindowController implements Initializable {
     @FXML private Button rundturButton;
     @FXML private Button historyButton;
     @FXML private Button cartButton;
-    @FXML private Button favoritehButton;
+    @FXML private Button favoriteButton;
+    @FXML private Button listButton;
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
     @FXML private AnchorPane checkoutView;
     @FXML private AnchorPane cartAnchorPane;
     @FXML private AnchorPane historyAnchorPane;
+    @FXML private AnchorPane listAnchorPane;
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
+    @FXML private ListView listListView;
     
     
     

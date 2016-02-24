@@ -30,7 +30,7 @@
         <URL value="@mainwindow.css" />
     </stylesheets>
    <children>
-      <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar fx:id="menuBar" layoutY="-2.0" prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -53,25 +53,25 @@
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" fx:id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
-                  <Button id="rundturButton" alignment="CENTER" layoutX="204.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" layoutX="204.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                  <Button id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <TextField id="searchTextField" alignment="TOP_LEFT" layoutX="690.0" layoutY="17.0" prefHeight="31.0" prefWidth="290.0" AnchorPane.bottomAnchor="13.0" AnchorPane.topAnchor="17.0" />
-                  <Button id="searchButton" layoutX="980.0" layoutY="17.0" mnemonicParsing="false" text="Sök" />
-                  <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="cartButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="25.0">
+                  <Button id="favoriteButton" fx:id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="690.0" layoutY="17.0" prefHeight="31.0" prefWidth="290.0" AnchorPane.bottomAnchor="13.0" AnchorPane.topAnchor="17.0" />
+                  <Button id="searchButton" fx:id="searchButton" layoutX="980.0" layoutY="17.0" mnemonicParsing="false" text="Sök" />
+                  <Button id="historyButton" fx:id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="cartButton" fx:id="cartButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="25.0">
                      <graphic>
                         <AnchorPane>
                            <children>
                               <VBox>
                                  <children>
-                                    <Label alignment="CENTER" prefWidth="175.0" text="347 kr" textAlignment="CENTER" />
+                                    <Label fx:id="priceLabel" alignment="CENTER" prefWidth="175.0" text="347 kr" textAlignment="CENTER" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="175.0" text="Gå till kassa" textAlignment="CENTER" />
                                  </children>
                               </VBox>
@@ -79,14 +79,14 @@
                         </AnchorPane>
                      </graphic>
                   </Button>
-                  <Button id="listButton" layoutX="531.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="listButton" fx:id="listButton" layoutX="531.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                </children>
             </AnchorPane>
          </top>
          <left>
             <AnchorPane prefHeight="579.0" prefWidth="271.0" BorderPane.alignment="CENTER">
                <children>
-                  <ListView id="categoryListView" prefHeight="532.0" prefWidth="253.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView id="categoryListView" fx:id="categoryListView" prefHeight="532.0" prefWidth="253.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </left>
@@ -95,47 +95,47 @@
                <children>
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass" />
-                        <AnchorPane id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass" />
+                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="103.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
                                        <children>
-                                          <ListView id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="cartAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="780.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
                                        <children>
-                                          <ListView id="cartListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.topAnchor="0.0" />
+                                          <ListView id="cartListView" fx:id="cartListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
                                        <children>
-                                          <ListView id="listListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <ListView id="listListView" fx:id="listListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <ScrollPane id="mainView" prefHeight="626.0" prefWidth="1008.0">
+                        <ScrollPane id="mainView" fx:id="mainView" prefHeight="626.0" prefWidth="1008.0">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="626.0" prefWidth="1008.0">
                                  <children>
