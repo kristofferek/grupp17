@@ -27,6 +27,7 @@ public class G17 extends Application {
         
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"),bundle);
+        //Parent root2 = FXMLLoader.load(getClass().getResource("Productcell.fxml"),bundle);
         
         Scene scene = new Scene(root, 1280, 720);
         
