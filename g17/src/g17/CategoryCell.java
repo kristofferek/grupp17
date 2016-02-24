@@ -6,9 +6,11 @@
 package g17;
 
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 
 /**
  *
@@ -34,27 +36,20 @@ public class CategoryCell extends ListCell<Category>{
             } else {
                 setText(null);          
 
+                GridPane grid = new GridPane();
+                grid.setHgap(10);
+                grid.setVgap(6);
+                grid.setPadding(new Insets(5, 10, 5, 10));
                 Label name = new Label(item.getCategoryName());
-
-                setGraphic(name);
+                name.getStyleClass().add("categorylist");
+                grid.add(name, 0, 0);
+                setGraphic(grid);
             
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
                         //controller.initGridView(item.getCategories());
                         //controller.gridView.toFront();
-                    }
-                });
-                this.setOnMouseEntered(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        name.setStyle("-fx-background-color:#ADD8E6");
-                    }
-                });
-                name.setOnMouseExited(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        name.setStyle("");
                     }
                 });
             }
