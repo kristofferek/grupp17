@@ -6,6 +6,7 @@
 package g17;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -35,7 +36,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 
 public class MainWindowController implements Initializable {
 
-    private List<Category> listViewCategories;
+    private List<Category> listViewCategories = new ArrayList<>();
     MainWindowController instace;
     
     @FXML private MenuBar menuBar;

@@ -5,6 +5,7 @@
  */
 package g17;
 
+import java.util.ArrayList;
 import java.util.List;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
@@ -14,7 +15,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
  */
 public class Category {
     
-    private List<ProductCategory> categories;
+    private List<ProductCategory> categories = new ArrayList<>();
     private final String categoryName;
     
     public Category(String categoryName){
@@ -30,7 +31,9 @@ public class Category {
     }
     
     public void addProductCategory(ProductCategory pc){
-        categories.add(pc);
+        if(pc != null){
+            categories.add(pc);
+        }
     }
     
 }
