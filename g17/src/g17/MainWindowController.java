@@ -104,7 +104,6 @@ public class MainWindowController implements Initializable {
 
     @FXML
     protected void searchButtonActionPerformed(ActionEvent event){
-
         String searchWord = searchTextField.getText();
     }
     

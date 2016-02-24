@@ -19,19 +19,19 @@
                         <Image url="@../../../../../../../../Pictures/water.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="294.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="F" />
-                  <Button layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="I" />
+                  <Button id="favoriteButton" fx:id="favoriteButton" layoutX="294.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="F" />
+                  <Button id="InfoButton" fx:id="infoButton" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="I" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField id="amountOfProducts" layoutX="109.0" layoutY="158.0" prefHeight="31.0" prefWidth="31.0" text="1" />
-                  <Button id="buy" layoutX="262.0" layoutY="158.0" mnemonicParsing="false" text="Köp" />
-                  <Button id="addOne" layoutX="78.0" layoutY="158.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="+" />
-                  <Button id="removeOne" layoutX="140.0" layoutY="158.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-" />
-                  <Label id="priceEach" layoutX="14.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr/st" />
-                  <Label id="priceTotal" layoutX="191.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr" />
-                  <Label id="nameOfProduct" layoutX="14.0" layoutY="14.0" text="Namn på vara">
+                  <TextField id="productAmountTextField" fx:id="productAmountTextField" layoutX="109.0" layoutY="158.0" onKeyReleased="#productAmountTextFieldOnKeyPress" prefHeight="31.0" prefWidth="41.0" text="1" />
+                  <Button id="buyButton" fx:id="buyButton" layoutX="262.0" layoutY="158.0" mnemonicParsing="false" text="Köp" />
+                  <Button id="addOneButton" fx:id="addOneButton" layoutX="78.0" layoutY="158.0" mnemonicParsing="false" onAction="#addOneButtonActionPerformed" prefHeight="31.0" prefWidth="31.0" text="+" />
+                  <Button id="removeOneButton" fx:id="removeOneButton" layoutX="150.0" layoutY="158.0" mnemonicParsing="false" onAction="#removeOneButtonActionPerformed" prefHeight="31.0" prefWidth="31.0" text="-" />
+                  <Label id="priceEachLabel" fx:id="priceEachLabel" layoutX="14.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr/st" />
+                  <Label id="priceTotalLabel" fx:id="priceTotalLabel" layoutX="191.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr" />
+                  <Label id="nameOfProduct" fx:id="nameOfProduct" layoutX="14.0" layoutY="14.0" text="Namn på vara">
                      <font>
                         <Font size="22.0" />
                      </font>
