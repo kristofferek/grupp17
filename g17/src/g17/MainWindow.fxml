@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -19,7 +25,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -43,11 +49,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <BorderPane layoutY="32.0" prefHeight="688.0" prefWidth="1280.0">
+      <BorderPane layoutY="32.0" prefHeight="688.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Button" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
@@ -59,7 +65,7 @@
                   <TextField id="searchTextField" alignment="TOP_LEFT" layoutX="690.0" layoutY="17.0" prefHeight="31.0" prefWidth="290.0" AnchorPane.bottomAnchor="13.0" AnchorPane.topAnchor="17.0" />
                   <Button id="searchButton" layoutX="980.0" layoutY="17.0" mnemonicParsing="false" text="Sök" />
                   <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="cartButton" layoutX="1058.0" layoutY="6.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="15.0">
+                  <Button id="cartButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="25.0">
                      <graphic>
                         <AnchorPane>
                            <children>
@@ -73,6 +79,7 @@
                         </AnchorPane>
                      </graphic>
                   </Button>
+                  <Button id="listButton" layoutX="531.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                </children>
             </AnchorPane>
          </top>
@@ -88,6 +95,46 @@
                <children>
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
+                        <AnchorPane id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass" />
+                        <AnchorPane id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="103.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="cartAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="780.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView id="cartListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView id="listListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
                         <ScrollPane id="mainView" prefHeight="626.0" prefWidth="1008.0">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="626.0" prefWidth="1008.0">
@@ -110,7 +157,6 @@
                               </AnchorPane>
                           </content>
                         </ScrollPane>
-                        <AnchorPane id="checkoutView" style="-fx-background-color: #e8e8e8;" />
                      </children>
                   </StackPane>
                </children>

@@ -41,7 +41,12 @@ public class MainWindowController implements Initializable {
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
     @FXML private AnchorPane checkoutView;
+    @FXML private AnchorPane cartAnchorPane;
+    @FXML private AnchorPane historyAnchorPane;
     @FXML private ListView categoryListView;
+    @FXML private ListView historyListView;
+    @FXML private ListView cartListView;
+    
     
     
     
@@ -52,6 +57,8 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.rb = rb;
+        
+        
     }    
     
 }
