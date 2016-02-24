@@ -61,11 +61,11 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                  <Button id="favoriteButton" fx:id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="690.0" layoutY="17.0" prefHeight="31.0" prefWidth="290.0" AnchorPane.bottomAnchor="13.0" AnchorPane.topAnchor="17.0" />
-                  <Button id="searchButton" fx:id="searchButton" layoutX="980.0" layoutY="17.0" mnemonicParsing="false" text="Sök" />
-                  <Button id="historyButton" fx:id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="cartButton" fx:id="cartButton" layoutX="1060.0" layoutY="7.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="25.0">
+                  <Button id="searchButton" fx:id="searchButton" layoutX="980.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" text="Sök" />
+                  <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="cartButton" layoutX="1058.0" layoutY="6.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="191.0" wrapText="true" AnchorPane.rightAnchor="15.0">
                      <graphic>
                         <AnchorPane>
                            <children>

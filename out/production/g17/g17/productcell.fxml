@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="409.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.ProductcellController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="417.0" prefWidth="325.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ImageView fitHeight="203.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Pictures/water.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="294.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="F" />
+                  <Button layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="I" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField id="amountOfProducts" layoutX="109.0" layoutY="158.0" prefHeight="31.0" prefWidth="31.0" text="1" />
+                  <Button id="buy" layoutX="262.0" layoutY="158.0" mnemonicParsing="false" text="Köp" />
+                  <Button id="addOne" layoutX="78.0" layoutY="158.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="+" />
+                  <Button id="removeOne" layoutX="140.0" layoutY="158.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-" />
+                  <Label id="priceEach" layoutX="14.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr/st" />
+                  <Label id="priceTotal" layoutX="191.0" layoutY="163.0" prefHeight="21.0" prefWidth="64.0" text="0 kr" />
+                  <Label id="nameOfProduct" layoutX="14.0" layoutY="14.0" text="Namn på vara">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
