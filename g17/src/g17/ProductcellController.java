@@ -48,15 +48,15 @@ public class ProductcellController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lastValidProductAmountString = "";
-        //setProduct(IMatDataHandler.getInstance().getProduct(3));
+        setProduct(IMatDataHandler.getInstance().getProduct(3));
     }
     
     public void setProduct(Product product){
-        /*this.product = product;
+        this.product = product;
         priceEachLabel.setText(product.getPrice() +  " kr/st");
         nameOfProduct.setText(product.getName());
         imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
-        setProductAmount(1);*/
+        setProductAmount(1);
     }
     
     private void setProductAmount(int amount){
