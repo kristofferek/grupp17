@@ -16,7 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
 /**
@@ -26,7 +27,7 @@ import se.chalmers.ait.dat215.project.Product;
  */
 public class ProductcellController implements Initializable {
 
-    @FXML private Image imageImage;
+    @FXML private ImageView imageImageView;
     @FXML private Button infoButton;
     @FXML private Button favoriteButton;
     @FXML private Button buyButton;
@@ -37,7 +38,8 @@ public class ProductcellController implements Initializable {
     @FXML private Label nameOfProduct;
     @FXML private TextField productAmountTextField;
     
-    private String lastValidProductAmountString = "";
+    private String lastValidProductAmountString;
+    private Product product;
     
     
     /**
@@ -45,11 +47,16 @@ public class ProductcellController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }    
+        lastValidProductAmountString = "";
+        setProduct(IMatDataHandler.getInstance().getProduct(3));
+    }
     
     public void setProduct(Product product){
-        
+        this.product = product;
+        priceEachLabel.setText(product.getPrice() +  " kr/st");
+        nameOfProduct.setText(product.getName());
+        imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
+        setProductAmount(1);
     }
     
     private void setProductAmount(int amount){
@@ -60,6 +67,11 @@ public class ProductcellController implements Initializable {
         }
         
         productAmountTextField.setText("" + amount);
+        updateTotalPrice();
+    }
+    
+    private void updateTotalPrice(){
+        priceTotalLabel.setText("" + product.getPrice() * getProductAmount() + " kr");
     }
     
     private int getProductAmount(){
@@ -74,7 +86,6 @@ public class ProductcellController implements Initializable {
     private void correctProductAmountTextField(){
         try{
             if(!productAmountTextField.getText().equals("")){
-                System.out.println("in if");
                 int amount = Integer.parseInt(productAmountTextField.getText());
                 if(amount < 1){
                     setProductAmount(1);
@@ -102,6 +113,7 @@ public class ProductcellController implements Initializable {
     @FXML
     protected void productAmountTextFieldOnKeyPress(javafx.scene.input.KeyEvent event){
         correctProductAmountTextField();
+        updateTotalPrice();
     }
     
 }

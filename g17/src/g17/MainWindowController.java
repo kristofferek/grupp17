@@ -22,6 +22,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
@@ -58,6 +59,8 @@ public class MainWindowController implements Initializable {
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
     @FXML private ListView listListView;
+    
+    @FXML private GridPane gridpane;
     
     
     
