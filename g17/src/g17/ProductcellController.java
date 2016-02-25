@@ -41,6 +41,8 @@ public class ProductcellController implements Initializable {
     private String lastValidProductAmountString;
     private Product product;
     
+    private static int created = 0;
+    
     
     /**
      * Initializes the controller class.
@@ -48,7 +50,8 @@ public class ProductcellController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lastValidProductAmountString = "";
-        setProduct(IMatDataHandler.getInstance().getProduct(3));
+        created++;
+        setProduct(IMatDataHandler.getInstance().getProduct(created));
     }
     
     public void setProduct(Product product){

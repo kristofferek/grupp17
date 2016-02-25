@@ -5,14 +5,21 @@
  */
 package g17;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -23,7 +30,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.util.Callback;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
@@ -72,6 +81,85 @@ public class MainWindowController implements Initializable {
         instace = this;
         
         initCategoryListView();
+        addDisplayProducts();
+        
+    }
+    
+    protected void addDisplayProducts(){
+        gridpane.autosize();
+        double scaleX = (gridpane.getWidth() / 5.0) * (double)1/325;        //scale to fit in gridpane
+        double scaleY = (gridpane.getHeight() / 3.0) * (double)1/409;
+        try {
+            
+            for(int x = 0; x < 5; x++){
+                for(int y = 0; y < 3; y++){
+                    
+                    
+                    ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("productcell.fxml"));
+                    
+                    
+                    //loader = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
+                            
+                    ProductcellController controller;
+                    //controller = loader.<ProductcellController>getController();
+                    //controller = loader.getController();
+                    
+                    
+                    
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    Pane p = fxmlLoader.load(getClass().getResource("productcell.fxml").openStream());
+                    controller = (ProductcellController) fxmlLoader.getController();
+                    
+                    controller.setProduct(IMatDataHandler.getInstance().getProduct(3));
+                    
+                    
+                    
+                    
+                    System.out.println("controller: " + controller);
+                    
+                    //controller.setProduct(IMatDataHandler.getInstance().getProduct(3));
+                    
+                    
+                    Parent root = loader.load(getClass().getResource("productcell.fxml"),bundle);
+                    //root = loader.getController().getClass();
+                    
+                    loader.setRoot(root);
+                    //Parent loaderRoot = loader.getRoot();
+                    Parent loaderRoot = root;
+                    
+                    System.out.println("root: " + loaderRoot);
+
+                    loaderRoot.setScaleX(scaleX);
+                    loaderRoot.setScaleY(scaleY);
+                    //gridpane.add(loaderRoot, 0, 0);
+                    gridpane.add(loaderRoot, x, y);
+                    
+                    
+                    
+                    
+                    if(bundle == null)
+                    throw new IOException();
+                    
+                    /*ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
+                    Parent root;
+                    root = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
+                            
+                    ProductcellController controller;
+                    controller = root.
+                    controller = root.<ProductcellController>getController();
+
+                    
+                    root.setScaleX(scaleX);
+                    root.setScaleY(scaleY);
+                    //gridpane.add(root2, 0, 0);
+                    gridpane.add(root, x, y);*/
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("catched");
+            //Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     protected void initCategoryListView(){
