@@ -56,7 +56,7 @@ public class ProductcellController implements Initializable {
     
     public void setProduct(Product product){
         this.product = product;
-        priceEachLabel.setText(product.getPrice() +  " kr/st");
+        priceEachLabel.setText(product.getPrice() +  " kr / "  + product.getUnitSuffix());
         nameOfProduct.setText(product.getName());
         imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
         setProductAmount(1);
