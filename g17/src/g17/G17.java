@@ -29,7 +29,7 @@ public class G17 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"),bundle);
         Parent root2 = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
         
-        Scene scene = new Scene(root2, 1280, 720);
+        Scene scene = new Scene(root, 1280, 720);
         
         primaryStage.setTitle("iMat");
         primaryStage.setScene(scene);
