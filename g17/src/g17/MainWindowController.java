@@ -87,8 +87,9 @@ public class MainWindowController implements Initializable {
     
     protected void addDisplayProducts(){
         gridpane.autosize();
-        double scaleX = (gridpane.getWidth() / 5.0) * (double)1/325;        //scale to fit in gridpane
-        double scaleY = (gridpane.getHeight() / 3.0) * (double)1/409;
+        System.out.println("gridpane width: " + gridpane.getWidth());
+        double scaleX = ((gridpane.getWidth() / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
+        double scaleY = ((gridpane.getHeight() / 3.0) * (double)1/409) * 0.93;
         try {
             
             for(int x = 0; x < 5; x++){
