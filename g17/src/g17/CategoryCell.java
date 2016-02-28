@@ -53,11 +53,15 @@ public class CategoryCell extends ListCell<Category>{
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        List<Product> productsToDisplay = new ArrayList<>();
-                        for(ProductCategory cat : item.getCategories()){
-                            productsToDisplay.addAll(IMatDataHandler.getInstance().getProducts(cat));
+                        if(item.getCategoryName().equalsIgnoreCase("Visa allt")){
+                            controller.setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
+                        }else{
+                            List<Product> productsToDisplay = new ArrayList<>();
+                            for(ProductCategory cat : item.getCategories()){
+                                productsToDisplay.addAll(IMatDataHandler.getInstance().getProducts(cat));
+                            }
+                            controller.setProductsToDisplay(productsToDisplay);
                         }
-                        controller.setProductsToDisplay(productsToDisplay);
                     }
                 });
             }

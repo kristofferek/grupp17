@@ -152,6 +152,10 @@ public class MainWindowController implements Initializable {
     }
 
     protected void initCategoryListView(){
+        
+        // Allt category
+        Category showAll = new Category("Visa allt");
+
         // Mejeri category
         Category diaries = new Category("Mejeri");
         diaries.addProductCategory(ProductCategory.DAIRIES);
@@ -170,6 +174,7 @@ public class MainWindowController implements Initializable {
         meat.addProductCategory(ProductCategory.FISH);
         
         //Lägger till alla kategorier i en lista
+        listViewCategories.add(showAll);
         listViewCategories.add(diaries);
         listViewCategories.add(meat);
         listViewCategories.add(greenFood);
@@ -185,6 +190,7 @@ public class MainWindowController implements Initializable {
     @FXML
     protected void searchButtonActionPerformed(ActionEvent event){
         String searchWord = searchTextField.getText();
+        setProductsToDisplay(IMatDataHandler.getInstance().findProducts(searchWord));
     }
     
 }
