@@ -5,6 +5,8 @@
  */
 package g17;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -12,6 +14,8 @@ import javafx.scene.control.ListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  *
@@ -49,7 +53,11 @@ public class CategoryCell extends ListCell<Category>{
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        controller.setProductsToDisplay(IMatDataHandler.getInstance().getProducts(item.getCategories().get(0)));
+                        List<Product> productsToDisplay = new ArrayList<>();
+                        for(ProductCategory cat : item.getCategories()){
+                            productsToDisplay.addAll(IMatDataHandler.getInstance().getProducts(cat));
+                        }
+                        controller.setProductsToDisplay(productsToDisplay);
                     }
                 });
             }
