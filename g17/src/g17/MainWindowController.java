@@ -5,6 +5,7 @@
  */
 package g17;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -31,8 +32,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.RowConstraints;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
@@ -47,7 +50,8 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 public class MainWindowController implements Initializable {
 
     private List<Category> listViewCategories = new ArrayList<>();
-    MainWindowController instace;
+    private MainWindowController instace;
+    private int amountToDisplay;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -68,7 +72,7 @@ public class MainWindowController implements Initializable {
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
     @FXML private ListView listListView;
-    
+    @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
     
     
@@ -81,86 +85,70 @@ public class MainWindowController implements Initializable {
         instace = this;
         
         initCategoryListView();
-        addDisplayProducts();
+        setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
         
     }
     
+    protected void setProductsToDisplay(List<Product> products){
+        
+        amountToDisplay = products.size();
+        ProductcellController.clearCreated();
+        ProductcellController.setProductsToDisplay(products);
+        addDisplayProducts();
+    }
+    
     protected void addDisplayProducts(){
+        //gridContainer.autosize();
+        gridpane.getChildren().clear();
+        gridContainer.autosize();
+        gridpane.setMaxWidth(1626);
+        
+        System.out.println("gridContainer width: " + gridContainer.getWidth());
+        double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
+        double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.90;
+        
+        RowConstraints con = new RowConstraints();
+        con.setPrefHeight(300);
+        gridpane.getRowConstraints().add(con);
         gridpane.autosize();
-        System.out.println("gridpane width: " + gridpane.getWidth());
-        double scaleX = ((gridpane.getWidth() / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
-        double scaleY = ((gridpane.getHeight() / 3.0) * (double)1/409) * 0.93;
+        
+        int amountCreated = 0;
         try {
-            
-            for(int x = 0; x < 5; x++){
-                for(int y = 0; y < 3; y++){
-                    
+            while(amountCreated<amountToDisplay){
+                for(int x = 0; x < 5; x++){
+                    if(amountCreated == amountToDisplay){ break; }
                     
                     ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("productcell.fxml"));
+
+                    new ProductcellController();
                     
+                    //System.out.println("controller: " + controller);
                     
-                    //loader = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
-                            
-                    ProductcellController controller;
-                    //controller = loader.<ProductcellController>getController();
-                    //controller = loader.getController();
-                    
-                    
-                    
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    Pane p = fxmlLoader.load(getClass().getResource("productcell.fxml").openStream());
-                    controller = (ProductcellController) fxmlLoader.getController();
-                    
-                    controller.setProduct(IMatDataHandler.getInstance().getProduct(3));
-                    
-                    
-                    
-                    
-                    System.out.println("controller: " + controller);
-                    
-                    //controller.setProduct(IMatDataHandler.getInstance().getProduct(3));
-                    
-                    
-                    Parent root = loader.load(getClass().getResource("productcell.fxml"),bundle);
-                    //root = loader.getController().getClass();
-                    
+                    Parent root = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
                     loader.setRoot(root);
-                    //Parent loaderRoot = loader.getRoot();
-                    Parent loaderRoot = root;
                     
-                    System.out.println("root: " + loaderRoot);
+                    //System.out.println("root: " + root);
 
-                    loaderRoot.setScaleX(scaleX);
-                    loaderRoot.setScaleY(scaleY);
-                    //gridpane.add(loaderRoot, 0, 0);
-                    gridpane.add(loaderRoot, x, y);
-                    
-                    
-                    
-                    
-                    if(bundle == null)
-                    throw new IOException();
-                    
-                    /*ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
-                    Parent root;
-                    root = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
-                            
-                    ProductcellController controller;
-                    controller = root.
-                    controller = root.<ProductcellController>getController();
-
-                    
                     root.setScaleX(scaleX);
                     root.setScaleY(scaleY);
-                    //gridpane.add(root2, 0, 0);
-                    gridpane.add(root, x, y);*/
+                    System.out.println("x: " + x + ", y: " + (int)amountCreated/5 + " Tillagd vara");
+                    gridpane.add(root, x, (amountCreated)/5);
+                    amountCreated++;
                 }
+                if(amountCreated == amountToDisplay){ break; }
+                System.out.println((int)amountCreated/5 + " Tillagd rad");
+                gridpane.addRow((int)amountCreated/5);
+                gridpane.getRowConstraints().add(con);
             }
         } catch (IOException ex) {
             System.out.println("catched");
+            ex.printStackTrace();
             //Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        gridpane.autosize();
+        gridContainer.setMaxHeight((amountCreated+4)/5*300);
+        mainView.autosize();
     }
 
     protected void initCategoryListView(){

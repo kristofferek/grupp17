@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
  *
@@ -48,8 +49,7 @@ public class CategoryCell extends ListCell<Category>{
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        //controller.initGridView(item.getCategories());
-                        //controller.gridView.toFront();
+                        controller.setProductsToDisplay(IMatDataHandler.getInstance().getProducts(item.getCategories().get(0)));
                     }
                 });
             }

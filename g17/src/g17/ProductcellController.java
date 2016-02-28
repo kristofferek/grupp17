@@ -8,6 +8,7 @@ package g17;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.HashSet;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
 import javafx.event.ActionEvent;
@@ -40,9 +41,9 @@ public class ProductcellController implements Initializable {
     
     private String lastValidProductAmountString;
     private Product product;
+    private static List<Product> productsToDisplay;
     
     private static int created = 0;
-    
     
     /**
      * Initializes the controller class.
@@ -50,12 +51,13 @@ public class ProductcellController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lastValidProductAmountString = "";
+        setProduct(productsToDisplay.get(created));
         created++;
-        setProduct(IMatDataHandler.getInstance().getProduct(created));
     }
     
     public void setProduct(Product product){
         this.product = product;
+        System.out.println(product.getName());
         priceEachLabel.setText(product.getPrice() +  " kr / "  + product.getUnitSuffix());
         nameOfProduct.setText(product.getName());
         imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
@@ -117,6 +119,14 @@ public class ProductcellController implements Initializable {
     protected void productAmountTextFieldOnKeyPress(javafx.scene.input.KeyEvent event){
         correctProductAmountTextField();
         updateTotalPrice();
+    }
+    
+    public static void setProductsToDisplay(List<Product> products){
+        productsToDisplay = products;
+    }
+    
+    public static void clearCreated(){
+        created = 0;
     }
     
 }
