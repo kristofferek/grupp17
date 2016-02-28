@@ -52,6 +52,7 @@ public class MainWindowController implements Initializable {
     private List<Category> listViewCategories = new ArrayList<>();
     private MainWindowController instace;
     private int amountToDisplay;
+    private boolean isCartShowing = false;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -191,6 +192,37 @@ public class MainWindowController implements Initializable {
     protected void searchButtonActionPerformed(ActionEvent event){
         String searchWord = searchTextField.getText();
         setProductsToDisplay(IMatDataHandler.getInstance().findProducts(searchWord));
+    }
+    
+    @FXML
+    protected void historyButtonActionPerformed(ActionEvent event){
+        // TODO
+    }
+    
+    @FXML
+    protected void favoriteButtonActionPerformed(ActionEvent event){
+        // TODO
+    }
+    
+    @FXML
+    protected void cartButtonActionPerformed(ActionEvent event){
+        if(isCartShowing){
+            cartAnchorPane.toBack();
+            isCartShowing = false;
+        }else {
+            cartAnchorPane.toFront();
+            isCartShowing = true;
+        }
+    }
+    
+    @FXML
+    protected void listButtonActionPerformed(ActionEvent event){
+        // TODO
+    }
+    
+    @FXML
+    protected void homeButtonActionPerformed(ActionEvent event){
+        // TODO
     }
     
 }
