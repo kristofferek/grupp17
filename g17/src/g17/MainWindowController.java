@@ -194,7 +194,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
                 return new ShoppingItemCell();
             }
-        }); 
+        });
+        
     }
     
     public static MainWindowController getInstance(){
@@ -224,6 +225,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             isCartShowing = false;
         }else {
             cartAnchorPane.toFront();
+            cartAnchorPane.focusedProperty();
             isCartShowing = true;
         }
     }

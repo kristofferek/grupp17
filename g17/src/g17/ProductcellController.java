@@ -145,6 +145,7 @@ public class ProductcellController implements Initializable {
             System.out.println("Add: " + favouriteButton.getStyleClass().toString());
         }
     }
+    @FXML
     protected void buyButtonActionPerformed(ActionEvent event){
         ShoppingItem shoppingItem = new ShoppingItem(product, getProductAmount());
         IMatDataHandler.getInstance().getShoppingCart().addItem(shoppingItem);

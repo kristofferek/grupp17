@@ -102,19 +102,6 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="780.0" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="315.0">
-                                       <children>
-                                          <ListView id="cartListView" fx:id="cartListView" prefHeight="600.0" prefWidth="315.0" styleClass="dropdowns" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0">
@@ -126,6 +113,15 @@
                                     </AnchorPane>
                                 </content>
                               </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" focusTraversable="true" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                            <AnchorPane focusTraversable="true" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ListView id="cartListView" fx:id="cartListView" editable="true" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
