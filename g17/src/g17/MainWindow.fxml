@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
@@ -55,15 +57,30 @@
                   <Button id="homeButton" fx:id="homeButton" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
-                     </graphic></Button>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                   <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" focusTraversable="false" layoutX="140.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="13.0" />
-                     </font></Button>
-                  <Button id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="searchButton" fx:id="searchButton" focusTraversable="false" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="searchButton" fx:id="searchButton" focusTraversable="false" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                   <Button id="cartButton" alignment="CENTER" focusTraversable="false" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" styleClass="buyButton" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <AnchorPane prefHeight="0.0">
@@ -77,8 +94,14 @@
                            </children>
                         </AnchorPane>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                </children>
             </AnchorPane>
          </top>
@@ -130,6 +153,9 @@
                                        <font>
                                           <Font size="26.0" />
                                        </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                     </Button>
                                  </children>
                               </AnchorPane>
