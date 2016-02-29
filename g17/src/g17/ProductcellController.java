@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  * FXML Controller class
@@ -57,7 +58,6 @@ public class ProductcellController implements Initializable {
     
     public void setProduct(Product product){
         this.product = product;
-        System.out.println(product.getName());
         priceEachLabel.setText(product.getPrice() +  " kr / "  + product.getUnitSuffix());
         nameOfProduct.setText(product.getName());
         imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
@@ -120,12 +120,15 @@ public class ProductcellController implements Initializable {
         correctProductAmountTextField();
         updateTotalPrice();
     }
+    @FXML
+    protected void buyButtonActionPerformed(ActionEvent event){
+        ShoppingItem shoppingItem = new ShoppingItem(product, getProductAmount());
+        IMatDataHandler.getInstance().getShoppingCart().addItem(shoppingItem);
+        IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
+    }
     
     public static void setProductsToDisplay(List<Product> products){
         productsToDisplay = products;
-    }
-    
-    public static void clearCreated(){
         created = 0;
     }
     

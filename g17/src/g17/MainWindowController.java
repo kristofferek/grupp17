@@ -34,9 +34,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.util.Callback;
+import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.ShoppingCartListener;
 
 /**
  * FXML Controller class
@@ -47,10 +49,10 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 
 
 
-public class MainWindowController implements Initializable {
+public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
-    private MainWindowController instace;
+    private static MainWindowController instance;
     private int amountToDisplay;
     private boolean isCartShowing = false;
     
@@ -83,7 +85,8 @@ public class MainWindowController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        instace = this;
+        instance = this;
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
         
         initCategoryListView();
         setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
@@ -93,7 +96,6 @@ public class MainWindowController implements Initializable {
     protected void setProductsToDisplay(List<Product> products){
         
         amountToDisplay = products.size();
-        ProductcellController.clearCreated();
         ProductcellController.setProductsToDisplay(products);
         addDisplayProducts();
     }
@@ -124,28 +126,21 @@ public class MainWindowController implements Initializable {
 
                     new ProductcellController();
                     
-                    //System.out.println("controller: " + controller);
-                    
                     Parent root = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
                     loader.setRoot(root);
                     
-                    //System.out.println("root: " + root);
-
                     root.setScaleX(scaleX);
                     root.setScaleY(scaleY);
-                    System.out.println("x: " + x + ", y: " + (int)amountCreated/5 + " Tillagd vara");
                     gridpane.add(root, x, (amountCreated)/5);
                     amountCreated++;
                 }
                 if(amountCreated == amountToDisplay){ break; }
-                System.out.println((int)amountCreated/5 + " Tillagd rad");
                 gridpane.addRow((int)amountCreated/5);
                 gridpane.getRowConstraints().add(con);
             }
         } catch (IOException ex) {
             System.out.println("catched");
             ex.printStackTrace();
-            //Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
         gridpane.autosize();
         gridContainer.setMaxHeight((amountCreated+4)/5*300);
@@ -183,9 +178,13 @@ public class MainWindowController implements Initializable {
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
         categoryListView.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
             @Override public ListCell<Category> call(ListView<Category> list) {
-                return new CategoryCell(instace);
+                return new CategoryCell();
             }
         });       
+    }
+    
+    public static MainWindowController getInstance(){
+        return instance;
     }
 
     @FXML
@@ -223,6 +222,12 @@ public class MainWindowController implements Initializable {
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
         // TODO
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        System.out.println("Inne i shoppingcartlistener");
+        priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
     }
     
 }
