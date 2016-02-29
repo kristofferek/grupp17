@@ -55,8 +55,8 @@
                         <Font size="13.0" />
                      </font></Button>
                   <Button id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="searchButton" fx:id="searchButton" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.topAnchor="5.0" />
+                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="searchButton" fx:id="searchButton" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0" />
                   <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <Button id="cartButton" alignment="CENTER" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
@@ -128,9 +128,9 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #D0D0D0;">
+                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
                           <content>
-                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #D0D0D0;">
+                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #C0C0C0;">
                                  <children>
                                     <GridPane fx:id="gridpane" gridLinesVisible="true" prefHeight="907.0" prefWidth="1629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columnConstraints>

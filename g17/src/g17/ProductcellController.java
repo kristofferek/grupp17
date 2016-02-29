@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  * FXML Controller class
@@ -66,7 +67,6 @@ public class ProductcellController implements Initializable {
     
     public void setProduct(Product product){
         this.product = product;
-        System.out.println(product.getName());
         priceEachLabel.setText(product.getPrice() +  " kr / "  + product.getUnitSuffix());
         nameOfProduct.setText(product.getName());
         imageImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
@@ -130,27 +130,29 @@ public class ProductcellController implements Initializable {
         updateTotalPrice();
     }
     @FXML
-    protected void addFavouriteActionPerformed(ActionEvent event){
+    protected void addFavouriteActionPerformed(ActionEvent event) {
         favouriteButton.getStyleClass().remove(0);
-        if(!favouriteButton.getStyleClass().isEmpty()){
+        if (!favouriteButton.getStyleClass().isEmpty()) {
             favouriteButton.getStyleClass().remove(0);
         }
-        if(IMatDataHandler.getInstance().favorites().contains(product)){
+        if (IMatDataHandler.getInstance().favorites().contains(product)) {
             IMatDataHandler.getInstance().removeFavorite(product);
             favouriteButton.getStyleClass().add("nonfavourite");
             System.out.println("Remove: " + favouriteButton.getStyleClass().toString());
-        }else{
+        } else {
             IMatDataHandler.getInstance().addFavorite(product.getProductId());
             favouriteButton.getStyleClass().add("favourite");
             System.out.println("Add: " + favouriteButton.getStyleClass().toString());
         }
     }
+    protected void buyButtonActionPerformed(ActionEvent event){
+        ShoppingItem shoppingItem = new ShoppingItem(product, getProductAmount());
+        IMatDataHandler.getInstance().getShoppingCart().addItem(shoppingItem);
+        IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
+    }
     
     public static void setProductsToDisplay(List<Product> products){
         productsToDisplay = products;
-    }
-    
-    public static void clearCreated(){
         created = 0;
     }
     

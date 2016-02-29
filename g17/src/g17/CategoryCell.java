@@ -23,12 +23,6 @@ import se.chalmers.ait.dat215.project.ProductCategory;
  */
 public class CategoryCell extends ListCell<Category>{
     
-    MainWindowController controller;
-    
-    public CategoryCell(MainWindowController c){
-        controller = c;
-    }
-    
     @Override 
     protected void updateItem(Category item, boolean empty) {
         // calling super here is very important - don't skip this!
@@ -54,13 +48,13 @@ public class CategoryCell extends ListCell<Category>{
                     @Override
                     public void handle(MouseEvent event) {
                         if(item.getCategoryName().equalsIgnoreCase("Visa allt")){
-                            controller.setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
+                            MainWindowController.getInstance().setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
                         }else{
                             List<Product> productsToDisplay = new ArrayList<>();
                             for(ProductCategory cat : item.getCategories()){
                                 productsToDisplay.addAll(IMatDataHandler.getInstance().getProducts(cat));
                             }
-                            controller.setProductsToDisplay(productsToDisplay);
+                            MainWindowController.getInstance().setProductsToDisplay(productsToDisplay);
                         }
                     }
                 });
