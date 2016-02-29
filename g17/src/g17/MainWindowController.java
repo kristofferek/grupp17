@@ -39,6 +39,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  * FXML Controller class
@@ -52,6 +53,7 @@ import se.chalmers.ait.dat215.project.ShoppingCartListener;
 public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
+    private List<ShoppingItem> shoppingItems = new ArrayList<>();
     private static MainWindowController instance;
     private int amountToDisplay;
     private boolean isCartShowing = false;
@@ -90,6 +92,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         initCategoryListView();
         setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
+        initCartDropDown();
         
     }
     
@@ -183,6 +186,17 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         });       
     }
     
+    protected void initCartDropDown(){
+        shoppingItems.clear();
+        shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
+        cartListView.setItems(FXCollections.observableList(shoppingItems));
+        cartListView.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
+            @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
+                return new ShoppingItemCell();
+            }
+        }); 
+    }
+    
     public static MainWindowController getInstance(){
         return instance;
     }
@@ -226,8 +240,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        System.out.println("Inne i shoppingcartlistener");
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        initCartDropDown();
     }
     
 }
