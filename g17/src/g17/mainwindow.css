@@ -31,5 +31,11 @@
     -fx-background-size: 50 50;
     -fx-background-position: center center;
 }
+.buyButton{
+    -fx-background-color: #64C032;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-border-color: #B5B5B5;
 
+}
   

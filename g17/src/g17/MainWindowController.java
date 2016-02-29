@@ -67,6 +67,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button cartButton;
     @FXML private Button favoriteButton;
     @FXML private Button listButton;
+    @FXML private Button finalBuyButton;
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
     @FXML private AnchorPane checkoutView;
@@ -244,6 +245,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     public void shoppingCartChanged(CartEvent ce) {
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         initCartDropDown();
+    }
+    
+    @FXML
+    protected void finalBuyButtonActionPerformed(ActionEvent event){
+        System.out.println("clicked final buy");
     }
     
 }

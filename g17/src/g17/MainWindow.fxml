@@ -64,7 +64,7 @@
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0" />
                   <Button id="searchButton" fx:id="searchButton" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0" />
                   <Button id="historyButton" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="cartButton" alignment="CENTER" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                  <Button id="cartButton" alignment="CENTER" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" styleClass="buyButton" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <AnchorPane prefHeight="0.0">
                            <children>
@@ -126,6 +126,11 @@
                             <AnchorPane focusTraversable="true" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <ListView id="cartListView" fx:id="cartListView" editable="true" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" prefHeight="128.0" prefWidth="335.0" styleClass="buyButton" text="Slutför köp">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </AnchorPane>
                            </children>
