@@ -214,7 +214,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
-        // TODO
+        setProductsToDisplay(IMatDataHandler.getInstance().favorites());
     }
     
     @FXML

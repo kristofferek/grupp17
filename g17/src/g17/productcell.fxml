@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+=======
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -7,6 +17,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+>>>>>>> 7a42afd4669c19304fae52cfaec0d8793d548582
 
 <AnchorPane id="AnchorPane" prefHeight="409.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.ProductcellController">
    <children>
@@ -15,7 +26,14 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <ImageView fx:id="imageImageView" fitHeight="242.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button id="favoriteButton" fx:id="favoriteButton" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" text="F" />
+                  <Button fx:id="favouriteButton" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" onAction="#addFavouriteActionPerformed" prefHeight="47.0" prefWidth="47.0">
+                     <graphic>
+                        <ImageView fx:id="favouriteImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../pictures/heart1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                   <Button id="InfoButton" fx:id="infoButton" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" text="I" />
                </children>
             </AnchorPane>
