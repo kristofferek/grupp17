@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -18,7 +24,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -46,25 +52,25 @@
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" fx:id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" fx:id="homeButton" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
-                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" layoutX="204.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" layoutX="140.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                  <Button id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="favoriteButton" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0" />
                   <Button id="searchButton" fx:id="searchButton" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="historyButton" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <Button id="cartButton" alignment="CENTER" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <AnchorPane prefHeight="0.0">
                            <children>
-                              <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                              <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="347 kr" textAlignment="CENTER" />
+                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="0 kr" textAlignment="CENTER" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" text="Gå till kassa" textAlignment="CENTER" />
                                  </children>
                               </VBox>
@@ -72,7 +78,7 @@
                         </AnchorPane>
                      </graphic>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" layoutX="531.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="listButton" fx:id="listButton" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
                </children>
             </AnchorPane>
          </top>
