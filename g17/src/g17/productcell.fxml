@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -15,7 +16,14 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <ImageView fx:id="imageImageView" fitHeight="242.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button id="favoriteButton" fx:id="favoriteButton" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" text="F" />
+                  <Button fx:id="favouriteButton" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" onAction="#addFavouriteActionPerformed" prefHeight="47.0" prefWidth="47.0">
+                     <graphic>
+                        <ImageView fx:id="favouriteImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../pictures/heart1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                   <Button id="InfoButton" fx:id="infoButton" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" text="I" />
                </children>
             </AnchorPane>

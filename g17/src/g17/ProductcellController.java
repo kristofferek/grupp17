@@ -5,18 +5,17 @@
  */
 package g17;
 
-import java.awt.event.KeyEvent;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -30,7 +29,7 @@ public class ProductcellController implements Initializable {
 
     @FXML private ImageView imageImageView;
     @FXML private Button infoButton;
-    @FXML private Button favoriteButton;
+    @FXML private Button favouriteButton;
     @FXML private Button buyButton;
     @FXML private Button addOneButton;
     @FXML private Button removeOneButton;
@@ -44,7 +43,8 @@ public class ProductcellController implements Initializable {
     private static List<Product> productsToDisplay;
     
     private static int created = 0;
-    
+
+
     /**
      * Initializes the controller class.
      */
@@ -53,6 +53,15 @@ public class ProductcellController implements Initializable {
         lastValidProductAmountString = "";
         setProduct(productsToDisplay.get(created));
         created++;
+
+
+        //Removes the .button class and adds favourite/nonfavourite.
+        favouriteButton.getStyleClass().remove(0);
+        if(IMatDataHandler.getInstance().favorites().contains(product)){
+            favouriteButton.getStyleClass().add("favourite");
+        }else{
+            favouriteButton.getStyleClass().add("nonfavourite");
+        }
     }
     
     public void setProduct(Product product){
@@ -119,6 +128,22 @@ public class ProductcellController implements Initializable {
     protected void productAmountTextFieldOnKeyPress(javafx.scene.input.KeyEvent event){
         correctProductAmountTextField();
         updateTotalPrice();
+    }
+    @FXML
+    protected void addFavouriteActionPerformed(ActionEvent event){
+        favouriteButton.getStyleClass().remove(0);
+        if(!favouriteButton.getStyleClass().isEmpty()){
+            favouriteButton.getStyleClass().remove(0);
+        }
+        if(IMatDataHandler.getInstance().favorites().contains(product)){
+            IMatDataHandler.getInstance().removeFavorite(product);
+            favouriteButton.getStyleClass().add("nonfavourite");
+            System.out.println("Remove: " + favouriteButton.getStyleClass().toString());
+        }else{
+            IMatDataHandler.getInstance().addFavorite(product.getProductId());
+            favouriteButton.getStyleClass().add("favourite");
+            System.out.println("Add: " + favouriteButton.getStyleClass().toString());
+        }
     }
     
     public static void setProductsToDisplay(List<Product> products){

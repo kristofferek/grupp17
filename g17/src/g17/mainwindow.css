@@ -17,4 +17,19 @@
     -fx-font-size: 1.2em;
     -fx-font-weight: bold;
 }
+.nonfavourite{
+    -fx-background-color: #D3D3D3;
+    -fx-background-image: url("heart1.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 50 50;
+    -fx-background-position: center center;
+}
+.favourite{
+    -fx-background-color: #D3D3D3;
+    -fx-background-image: url("heart2.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 50 50;
+    -fx-background-position: center center;
+}
+
   

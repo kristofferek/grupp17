@@ -201,7 +201,7 @@ public class MainWindowController implements Initializable {
     
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
-        // TODO
+        setProductsToDisplay(IMatDataHandler.getInstance().favorites());
     }
     
     @FXML
