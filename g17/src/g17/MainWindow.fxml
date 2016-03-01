@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -26,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -147,12 +141,12 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" focusTraversable="true" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="759.0" prefWidth="1089.0">
                            <children>
-                            <AnchorPane focusTraversable="true" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                            <AnchorPane fx:id="cartListAnchorPane" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <ListView id="cartListView" fx:id="cartListView" editable="true" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" prefHeight="128.0" prefWidth="335.0" styleClass="buyButton" text="Slutför köp">
+                                    <ListView id="cartListView" fx:id="cartListView" focusTraversable="false" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="335.0" styleClass="buyButton" text="Slutför köp">
                                        <font>
                                           <Font size="26.0" />
                                        </font>
@@ -163,6 +157,9 @@
                                  </children>
                               </AnchorPane>
                            </children>
+                           <StackPane.margin>
+                              <Insets bottom="180.0" left="1270.0" />
+                           </StackPane.margin>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
                           <content>

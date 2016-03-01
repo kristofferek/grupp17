@@ -33,6 +33,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -80,6 +81,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
+    @FXML private AnchorPane cartListAnchorPane;
     
     
     
@@ -246,10 +248,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             isCartShowing = false;
         }else {
             cartAnchorPane.toFront();
-            cartAnchorPane.focusedProperty();
+            cartAnchorPane.setMouseTransparent(false);
             isCartShowing = true;
         }
     }
+    
     
     @FXML
     protected void listButtonActionPerformed(ActionEvent event){
