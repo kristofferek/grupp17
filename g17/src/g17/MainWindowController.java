@@ -152,7 +152,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     }
 
     protected void initCategoryListView(){
-        
+
         // Allt category
         Category showAll = new Category("Visa allt");
 
@@ -166,18 +166,38 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         greenFood.addProductCategory(ProductCategory.BERRY);
         greenFood.addProductCategory(ProductCategory.EXOTIC_FRUIT);
         greenFood.addProductCategory(ProductCategory.FRUIT);
-        greenFood.addProductCategory(ProductCategory.MELONS);
+        greenFood.addProductCategory(ProductCategory.MELONS);       
+        greenFood.addProductCategory(ProductCategory.HERB);
+        greenFood.addProductCategory(ProductCategory.VEGETABLE_FRUIT);
+        greenFood.addProductCategory(ProductCategory.CABBAGE);
         
         // Chark och kött category
         Category meat = new Category("Chark och kött");
         meat.addProductCategory(ProductCategory.MEAT);
         meat.addProductCategory(ProductCategory.FISH);
         
+        // Skafferi category
+        Category pantry = new Category("Skafferi");
+        pantry.addProductCategory(ProductCategory.BREAD);
+        pantry.addProductCategory(ProductCategory.FLOUR_SUGAR_SALT);
+        pantry.addProductCategory(ProductCategory.NUTS_AND_SEEDS);
+        pantry.addProductCategory(ProductCategory.PASTA);
+        pantry.addProductCategory(ProductCategory.POTATO_RICE);
+        pantry.addProductCategory(ProductCategory.POD);
+        pantry.addProductCategory(ProductCategory.COLD_DRINKS);
+        pantry.addProductCategory(ProductCategory.HOT_DRINKS);
+        
+        // Snask category
+        Category sweets = new Category("Snask");
+        sweets.addProductCategory(ProductCategory.SWEET);
+        
         //Lägger till alla kategorier i en lista
         listViewCategories.add(showAll);
         listViewCategories.add(diaries);
         listViewCategories.add(meat);
         listViewCategories.add(greenFood);
+        listViewCategories.add(pantry);
+        listViewCategories.add(sweets);
         
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
         categoryListView.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
