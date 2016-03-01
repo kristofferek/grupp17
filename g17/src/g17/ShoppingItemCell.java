@@ -49,6 +49,9 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                 //name.getStyleClass().add("categorylist");
                 grid.add(name, 1, 0);
                 
+                Label price = new Label(item.getTotal()+"");
+                grid.add(price,2,0);
+                
                 
                 
                 setGraphic(grid);
