@@ -147,21 +147,9 @@ public class ProductcellController implements Initializable {
     }
     @FXML
     protected void buyButtonActionPerformed(ActionEvent event){
-        boolean isAlreadyInCart = false;
-        //Kollar om varan redan finns i "kundvagnen" och i så fall bara ökar antalet på varan
-        for (ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
-            if(item.getProduct().getName().equals(product.getName())){
-                item.setAmount(item.getAmount()+getProductAmount());
-                isAlreadyInCart = true;
-                break;
-            }
-        }
-        //Om varan inte redan finns i "kundvagnen" så lägg till den
-        if (!isAlreadyInCart){
-            ShoppingItem shoppingItem = new ShoppingItem(product, getProductAmount());
-            IMatDataHandler.getInstance().getShoppingCart().addProduct(product, getProductAmount());
-        }
-        IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(new ShoppingItem(product), true);
+        ShoppingItem shoppingItem = new ShoppingItem(product, getProductAmount());
+        IMatDataHandler.getInstance().getShoppingCart().addItem(shoppingItem);
+        IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
     }
     
     public static void setProductsToDisplay(List<Product> products){
