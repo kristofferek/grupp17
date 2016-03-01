@@ -47,6 +47,8 @@ public class CategoryCell extends ListCell<Category>{
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
+                        System.out.println("In mouse event");
+                        MainWindowController.setToMainWindow();
                         if(item.getCategoryName().equalsIgnoreCase("Visa allt")){
                             MainWindowController.getInstance().setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
                         }else{

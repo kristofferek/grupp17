@@ -42,6 +42,7 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
+import sun.swing.FilePane;
 
 /**
  * FXML Controller class
@@ -214,6 +215,10 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         });       
     }
     
+    public static void setToMainWindow(){
+        getInstance().mainView.toFront();
+    }
+    
     protected void initHistoryDropDown(){
         orderHistory.clear();
         historyListView.getItems().clear();
@@ -315,6 +320,18 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void finalBuyButtonActionPerformed(ActionEvent event){
+                    checkoutView.toFront();
+
+        /*if(isCartShowing){
+            isCartShowing = false;
+        }else {
+            cartAnchorPane.toFront();
+            cartAnchorPane.setMouseTransparent(false);
+            isCartShowing = true;
+        }*/
+        
+        
+        
         System.out.println("clicked final buy");
     }
     

@@ -125,7 +125,6 @@
                <children>
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass" />
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="0.0">
@@ -189,6 +188,44 @@
                               </AnchorPane>
                           </content>
                         </ScrollPane>
+                        <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass">
+                           <children>
+                              <TextField layoutX="920.0" layoutY="250.0" prefHeight="31.0" prefWidth="240.0" />
+                              <TextField layoutX="920.0" layoutY="200.0" prefHeight="31.0" prefWidth="240.0" />
+                              <TextField layoutX="920.0" layoutY="300.0" prefHeight="31.0" prefWidth="240.0" />
+                              <TextField layoutX="920.0" layoutY="400.0" prefHeight="31.0" prefWidth="240.0" />
+                              <TextField layoutX="920.0" layoutY="350.0" prefHeight="31.0" prefWidth="240.0" />
+                              <Label layoutX="1181.0" layoutY="205.0" text="Namn" />
+                              <Label layoutX="1181.0" layoutY="255.0" text="Efternamn" />
+                              <Label layoutX="1181.0" layoutY="305.0" text="Adess" />
+                              <Label layoutX="1181.0" layoutY="355.0" text="Postnummer" />
+                              <Label layoutX="1181.0" layoutY="405.0" text="Telefon" />
+                              <TextField layoutX="920.0" layoutY="450.0" prefHeight="31.0" prefWidth="240.0" />
+                              <Label layoutX="1181.0" layoutY="455.0" text="Mail" />
+                              <Label layoutX="920.0" layoutY="157.0" text="Personuppgifter">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="920.0" layoutY="539.0" text="Betaluppgifter">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="920.0" layoutY="581.0" prefHeight="31.0" prefWidth="152.0" />
+                              <TextField layoutX="1084.0" layoutY="581.0" prefHeight="31.0" prefWidth="44.0" />
+                              <Label layoutX="920.0" layoutY="625.0" prefHeight="21.0" prefWidth="89.0" text="Kortnummer" />
+                              <Label layoutX="1084.0" layoutY="625.0" prefHeight="21.0" prefWidth="89.0" text="cvv" />
+                              <Button fx:id="finalBuyButton1" layoutX="920.0" layoutY="692.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="95.0" prefWidth="292.0" styleClass="buyButton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="41.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </StackPane>
                </children>
