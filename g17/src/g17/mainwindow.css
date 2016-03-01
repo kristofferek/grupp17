@@ -32,10 +32,12 @@
     -fx-background-position: center center;
 }
 .buyButton{
-    -fx-background-color: #64C032;
-    -fx-border-width: 1;
+    -fx-background-color: #689F38;
+    -fx-border-width: 4;
     -fx-border-style: solid;
-    -fx-border-color: #B5B5B5;
-
+    -fx-border-color: #558B2F;
+}
+.produktnamn {
+    -fx-font-size: 1.1em;
 }
   
