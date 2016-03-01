@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -20,7 +28,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -115,19 +123,6 @@
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass" />
-                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="103.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
-                                       <children>
-                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="0.0">
@@ -160,6 +155,19 @@
                            <StackPane.margin>
                               <Insets bottom="180.0" left="1270.0" />
                            </StackPane.margin>
+                        </AnchorPane>
+                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="74.0" prefHeight="382.0" prefWidth="260.0" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="258.0">
+                                       <children>
+                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
                           <content>

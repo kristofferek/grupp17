@@ -37,6 +37,7 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
@@ -54,10 +55,14 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
-    private List<ShoppingItem> shoppingItems = new ArrayList<>();
+    private List<ShoppingItem> shoppingItems = new ArrayList<>();  
+    private List<Order> orderHistory = new ArrayList<>();
+    
     private static MainWindowController instance;
     private int amountToDisplay;
     private boolean isCartShowing = false;
+    private boolean isListsShowing = false;
+    private boolean isHistoryShowing = false;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -209,6 +214,29 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         });       
     }
     
+    protected void initHistoryDropDown(){
+        orderHistory.clear();
+        historyListView.getItems().clear();
+       
+        //for test purposes
+        for(int i=0; i<10; i++){
+            IMatDataHandler.getInstance().placeOrder(false);
+        }
+        
+       
+        orderHistory.addAll(IMatDataHandler.getInstance().getOrders());
+        historyListView.setItems(FXCollections.observableList(orderHistory));
+        
+        for(int i=0; i<orderHistory.size(); i++){
+            historyListView.setCellFactory(new Callback<ListView<Order>, ListCell<Order>>() {
+                @Override public ListCell<Order> call(ListView<Order> list) {
+                    return new HistoryItemCell();
+                }
+            });
+        }
+    }
+    
+    
     protected void initCartDropDown(){
         shoppingItems.clear();
         shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
@@ -233,7 +261,15 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void historyButtonActionPerformed(ActionEvent event){
-        // TODO
+        if(isHistoryShowing){
+            historyAnchorPane.toBack();
+            isHistoryShowing = false;
+        }else {
+            historyAnchorPane.toFront();
+            historyAnchorPane.setMouseTransparent(false);
+            isHistoryShowing = true;           
+            initHistoryDropDown();
+        }
     }
     
     @FXML
@@ -256,7 +292,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void listButtonActionPerformed(ActionEvent event){
-        // TODO
+        if(isListsShowing){
+            listAnchorPane.toBack();
+            isListsShowing = false;
+        }else {
+            listAnchorPane.toFront();
+            listAnchorPane.setMouseTransparent(false);
+            isListsShowing = true;
+        }
     }
     
     @FXML
