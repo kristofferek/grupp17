@@ -84,6 +84,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
+    @FXML private ListView cartListViewCheckout;
     @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
@@ -251,8 +252,20 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 return new ShoppingItemCell();
             }
         });
-        
     }
+    
+    protected void initCheckoutList(){
+        shoppingItems.clear();
+        shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
+        cartListViewCheckout.setItems(FXCollections.observableList(shoppingItems));
+        cartListViewCheckout.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
+            @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
+                return new ShoppingItemCell();
+            }
+        });
+    }
+    
+    
     
     public static MainWindowController getInstance(){
         return instance;
@@ -279,6 +292,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
+        mainView.toFront();
         setProductsToDisplay(IMatDataHandler.getInstance().favorites());
     }
     
@@ -309,13 +323,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
-        // TODO
+        mainView.toFront();
     }
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         initCartDropDown();
+        initCheckoutList();
     }
     
     @FXML
