@@ -38,4 +38,23 @@
     -fx-border-color: #B5B5B5;
 
 }
-  
+/*
+KNAPPAJ!
+*/
+.button-selected,
+.button-unselected {
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(5,0,0,1) , 5, 0.0 , 0 , 1 );
+    -fx-center: center;
+}
+
+.button-selected {
+    -fx-text-fill: #111111;
+    -fx-background-color: #B92B2B;
+}
+
+.button-unselected {
+    -fx-text-fill: #000000;
+    -fx-background-color: #FF3F3F;
+}

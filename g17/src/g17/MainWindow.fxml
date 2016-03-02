@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -20,7 +28,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -48,21 +56,21 @@
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" fx:id="homeButton" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" fx:id="homeButton" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" styleClass="button-selected" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" focusTraversable="false" layoutX="140.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" focusTraversable="false" layoutX="140.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" styleClass="button-unselected" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="13.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="favoriteButton" fx:id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -74,7 +82,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="historyButton" fx:id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -95,7 +103,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>

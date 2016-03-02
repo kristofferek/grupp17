@@ -131,18 +131,13 @@ public class ProductcellController implements Initializable {
     }
     @FXML
     protected void addFavouriteActionPerformed(ActionEvent event) {
-        favouriteButton.getStyleClass().remove(0);
-        if (!favouriteButton.getStyleClass().isEmpty()) {
-            favouriteButton.getStyleClass().remove(0);
-        }
+        favouriteButton.getStyleClass().clear();
         if (IMatDataHandler.getInstance().favorites().contains(product)) {
             IMatDataHandler.getInstance().removeFavorite(product);
             favouriteButton.getStyleClass().add("nonfavourite");
-            System.out.println("Remove: " + favouriteButton.getStyleClass().toString());
         } else {
             IMatDataHandler.getInstance().addFavorite(product.getProductId());
             favouriteButton.getStyleClass().add("favourite");
-            System.out.println("Add: " + favouriteButton.getStyleClass().toString());
         }
     }
     @FXML

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -18,7 +28,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -46,33 +56,57 @@
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" fx:id="homeButton" layoutX="35.0" layoutY="39.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" fx:id="homeButton" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" styleClass="button-selected" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
-                     </graphic></Button>
-                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" layoutX="204.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="rundturButton" fx:id="rundturButton" alignment="CENTER" focusTraversable="false" layoutX="140.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" styleClass="button-unselected" text="Rundtur i affär" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="13.0" />
-                     </font></Button>
-                  <Button id="favoriteButton" layoutX="312.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="searchButton" fx:id="searchButton" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.topAnchor="5.0" />
-                  <Button id="historyButton" layoutX="422.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                  <Button id="cartButton" alignment="CENTER" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="favoriteButton" fx:id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="275.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
+                  <Button id="searchButton" fx:id="searchButton" focusTraversable="false" layoutX="1455.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="48.0" prefWidth="60.0" text="Sök" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="historyButton" fx:id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="cartButton" alignment="CENTER" focusTraversable="false" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="335.0" styleClass="buyButton" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <AnchorPane prefHeight="0.0">
                            <children>
-                              <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                              <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="347 kr" textAlignment="CENTER" />
+                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="0 kr" textAlignment="CENTER" />
                                     <Label alignment="CENTER" contentDisplay="CENTER" text="Gå till kassa" textAlignment="CENTER" />
                                  </children>
                               </VBox>
                            </children>
                         </AnchorPane>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" layoutX="531.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                </children>
             </AnchorPane>
          </top>
@@ -102,22 +136,9 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="780.0" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="315.0">
-                                       <children>
-                                          <ListView id="cartListView" fx:id="cartListView" prefHeight="600.0" prefWidth="315.0" styleClass="dropdowns" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0">
+                              <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
                                        <children>
@@ -128,9 +149,29 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #D0D0D0;">
+                        <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="759.0" prefWidth="1089.0">
+                           <children>
+                            <AnchorPane fx:id="cartListAnchorPane" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="335.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ListView id="cartListView" fx:id="cartListView" focusTraversable="false" prefHeight="600.0" prefWidth="335.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="335.0" styleClass="buyButton" text="Slutför köp">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="180.0" left="1270.0" />
+                           </StackPane.margin>
+                        </AnchorPane>
+                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
                           <content>
-                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #D0D0D0;">
+                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #C0C0C0;">
                                  <children>
                                     <GridPane fx:id="gridpane" gridLinesVisible="true" prefHeight="907.0" prefWidth="1629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columnConstraints>

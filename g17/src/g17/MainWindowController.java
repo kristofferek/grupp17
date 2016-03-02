@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.sun.javafx.css.StyleClassSet;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,12 +64,12 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
     @FXML private Button homeButton;
-    @FXML private Button searchButton;
     @FXML private Button rundturButton;
     @FXML private Button historyButton;
-    @FXML private Button cartButton;
     @FXML private Button favoriteButton;
     @FXML private Button listButton;
+    @FXML private Button cartButton;
+    @FXML private Button searchButton;
     @FXML private Button finalBuyButton;
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
@@ -96,6 +98,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         initCategoryListView();
         setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
         initCartDropDown();
+        System.out.println(historyButton.getStyleClass().toString());
+        updateButtons(homeButton);
         
     }
     
@@ -158,46 +162,66 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         // Allt category
         Category showAll = new Category("Visa allt");
 
-        // Mejeri category
-        Category diaries = new Category("Mejeri");
-        diaries.addProductCategory(ProductCategory.DAIRIES);
-        
-        // Frukt och grönt category
-        Category greenFood = new Category("Frukt och grönt");
-        greenFood.addProductCategory(ProductCategory.CITRUS_FRUIT);
-        greenFood.addProductCategory(ProductCategory.BERRY);
-        greenFood.addProductCategory(ProductCategory.EXOTIC_FRUIT);
-        greenFood.addProductCategory(ProductCategory.FRUIT);
-        greenFood.addProductCategory(ProductCategory.MELONS);       
-        greenFood.addProductCategory(ProductCategory.HERB);
-        greenFood.addProductCategory(ProductCategory.VEGETABLE_FRUIT);
-        greenFood.addProductCategory(ProductCategory.CABBAGE);
-        
+        // Bageri category
+        Category bread = new Category("Bageri");
+        bread.addProductCategory(ProductCategory.BREAD);
+
         // Chark och kött category
         Category meat = new Category("Chark och kött");
         meat.addProductCategory(ProductCategory.MEAT);
-        meat.addProductCategory(ProductCategory.FISH);
-        
+
+        // Bageri category
+        Category drinks = new Category("Drycker");
+        drinks.addProductCategory(ProductCategory.COLD_DRINKS);
+        drinks.addProductCategory(ProductCategory.HOT_DRINKS);
+
+        //Fisk category
+        Category fish = new Category("Fisk och skaldjur");
+        fish.addProductCategory(ProductCategory.FISH);
+
+        //Frukt category
+        Category fruit= new Category("Frukt");
+        fruit.addProductCategory(ProductCategory.FRUIT);
+        fruit.addProductCategory(ProductCategory.VEGETABLE_FRUIT);
+        fruit.addProductCategory(ProductCategory.EXOTIC_FRUIT);
+        fruit.addProductCategory(ProductCategory.CITRUS_FRUIT);
+        fruit.addProductCategory(ProductCategory.MELONS);
+        fruit.addProductCategory(ProductCategory.BERRY);
+
+        //Vegtable category
+        Category greenFood = new Category("Grönsaker");
+        greenFood.addProductCategory(ProductCategory.CABBAGE);
+        greenFood.addProductCategory(ProductCategory.MELONS);
+        greenFood.addProductCategory(ProductCategory.BERRY);
+        greenFood.addProductCategory(ProductCategory.HERB);
+
+
+        // Mejeri category
+        Category diaries = new Category("Mejeri");
+        diaries.addProductCategory(ProductCategory.DAIRIES);
+
         // Skafferi category
         Category pantry = new Category("Skafferi");
-        pantry.addProductCategory(ProductCategory.BREAD);
         pantry.addProductCategory(ProductCategory.FLOUR_SUGAR_SALT);
-        pantry.addProductCategory(ProductCategory.NUTS_AND_SEEDS);
         pantry.addProductCategory(ProductCategory.PASTA);
         pantry.addProductCategory(ProductCategory.POTATO_RICE);
+        pantry.addProductCategory(ProductCategory.NUTS_AND_SEEDS);
         pantry.addProductCategory(ProductCategory.POD);
-        pantry.addProductCategory(ProductCategory.COLD_DRINKS);
-        pantry.addProductCategory(ProductCategory.HOT_DRINKS);
-        
+        pantry.addProductCategory(ProductCategory.HERB);
+
         // Snask category
         Category sweets = new Category("Snask");
         sweets.addProductCategory(ProductCategory.SWEET);
-        
+        sweets.addProductCategory(ProductCategory.NUTS_AND_SEEDS);
+
         //Lägger till alla kategorier i en lista
         listViewCategories.add(showAll);
-        listViewCategories.add(diaries);
+        listViewCategories.add(bread);
         listViewCategories.add(meat);
+        listViewCategories.add(drinks);
+        listViewCategories.add(fish);
         listViewCategories.add(greenFood);
+        listViewCategories.add(diaries);
         listViewCategories.add(pantry);
         listViewCategories.add(sweets);
         
@@ -234,10 +258,13 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void historyButtonActionPerformed(ActionEvent event){
         // TODO
+        System.out.println(historyButton.getStyleClass().toString());
+        updateButtons(historyButton);
     }
     
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
+        updateButtons(favoriteButton);
         setProductsToDisplay(IMatDataHandler.getInstance().favorites());
     }
     
@@ -257,11 +284,13 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void listButtonActionPerformed(ActionEvent event){
         // TODO
+        updateButtons(listButton);
     }
     
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
         // TODO
+        updateButtons(homeButton);
     }
 
     @Override
@@ -274,5 +303,19 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     protected void finalBuyButtonActionPerformed(ActionEvent event){
         System.out.println("clicked final buy");
     }
-    
+    //Lägger alla knappar i "unslected" kategorin förutom den tryckta
+    private void updateButtons(Button newSelected){
+        favoriteButton.getStyleClass().clear();
+        favoriteButton.getStyleClass().add("button-unselected");
+        homeButton.getStyleClass().clear();
+        homeButton.getStyleClass().add("button-unselected");
+        historyButton.getStyleClass().clear();
+        historyButton.getStyleClass().add("button-unselected");
+        rundturButton.getStyleClass().clear();
+        rundturButton.getStyleClass().add("button-unselected");
+        listButton.getStyleClass().clear();
+        listButton.getStyleClass().add("button-unselected");
+        newSelected.getStyleClass().clear();
+        newSelected.getStyleClass().add("button-selected");
+    }
 }
