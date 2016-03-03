@@ -23,13 +23,9 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <ImageView fx:id="imageImageView" fitHeight="242.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="favouriteButton" focusTraversable="false" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" onAction="#addFavouriteActionPerformed" prefHeight="47.0" prefWidth="47.0">
+                  <Button fx:id="favouriteButton" focusTraversable="false" layoutX="278.0" layoutY="-1.0" mnemonicParsing="false" onAction="#addFavouriteActionPerformed" prefHeight="64.0" prefWidth="64.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <graphic>
-                        <ImageView fx:id="favouriteImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../pictures/heart1.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="favouriteImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />

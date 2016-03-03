@@ -39,10 +39,12 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
+import sun.swing.FilePane;
 
 /**
  * FXML Controller class
@@ -56,10 +58,14 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
-    private List<ShoppingItem> shoppingItems = new ArrayList<>();
+    private List<ShoppingItem> shoppingItems = new ArrayList<>();  
+    private List<Order> orderHistory = new ArrayList<>();
+    
     private static MainWindowController instance;
     private int amountToDisplay;
     private boolean isCartShowing = false;
+    private boolean isListsShowing = false;
+    private boolean isHistoryShowing = false;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -80,6 +86,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
+    @FXML private ListView cartListViewCheckout;
     @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
@@ -224,14 +231,44 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         listViewCategories.add(diaries);
         listViewCategories.add(pantry);
         listViewCategories.add(sweets);
-        
+
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
+        //TODO
+        categoryListView.getStyleClass().clear();
+        categoryListView.getStyleClass().add("showAll");
         categoryListView.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
             @Override public ListCell<Category> call(ListView<Category> list) {
                 return new CategoryCell();
             }
         });       
     }
+    
+    public static void setToMainWindow(){
+        getInstance().mainView.toFront();
+    }
+    
+    protected void initHistoryDropDown(){
+        orderHistory.clear();
+        historyListView.getItems().clear();
+       
+        //for test purposes
+        for(int i=0; i<10; i++){
+            IMatDataHandler.getInstance().placeOrder(false);
+        }
+        
+       
+        orderHistory.addAll(IMatDataHandler.getInstance().getOrders());
+        historyListView.setItems(FXCollections.observableList(orderHistory));
+        
+        for(int i=0; i<orderHistory.size(); i++){
+            historyListView.setCellFactory(new Callback<ListView<Order>, ListCell<Order>>() {
+                @Override public ListCell<Order> call(ListView<Order> list) {
+                    return new HistoryItemCell();
+                }
+            });
+        }
+    }
+    
     
     protected void initCartDropDown(){
         shoppingItems.clear();
@@ -242,8 +279,20 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 return new ShoppingItemCell();
             }
         });
-        
     }
+    
+    protected void initCheckoutList(){
+        shoppingItems.clear();
+        shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
+        cartListViewCheckout.setItems(FXCollections.observableList(shoppingItems));
+        cartListViewCheckout.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
+            @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
+                return new ShoppingItemCell();
+            }
+        });
+    }
+    
+    
     
     public static MainWindowController getInstance(){
         return instance;
@@ -257,15 +306,24 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     @FXML
     protected void historyButtonActionPerformed(ActionEvent event){
-        // TODO
-        System.out.println(historyButton.getStyleClass().toString());
+        if(isHistoryShowing){
+            historyAnchorPane.toBack();
+            isHistoryShowing = false;
+        }else {
+            historyAnchorPane.toFront();
+            historyAnchorPane.setMouseTransparent(false);
+            isHistoryShowing = true;
+            initHistoryDropDown();
+        }
         updateButtons(historyButton);
     }
     
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
-        updateButtons(favoriteButton);
+        mainView.toFront();
+
         setProductsToDisplay(IMatDataHandler.getInstance().favorites());
+        updateButtons(favoriteButton);
     }
     
     @FXML
@@ -284,12 +342,21 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void listButtonActionPerformed(ActionEvent event){
         // TODO
+        if(isListsShowing){
+            listAnchorPane.toBack();
+            isListsShowing = false;
+        }else {
+            listAnchorPane.toFront();
+            listAnchorPane.setMouseTransparent(false);
+            isListsShowing = true;
+        }
         updateButtons(listButton);
     }
     
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
         // TODO
+        mainView.toFront();
         updateButtons(homeButton);
     }
 
@@ -297,10 +364,23 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     public void shoppingCartChanged(CartEvent ce) {
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         initCartDropDown();
+        initCheckoutList();
     }
     
     @FXML
     protected void finalBuyButtonActionPerformed(ActionEvent event){
+                    checkoutView.toFront();
+
+        /*if(isCartShowing){
+            isCartShowing = false;
+        }else {
+            cartAnchorPane.toFront();
+            cartAnchorPane.setMouseTransparent(false);
+            isCartShowing = true;
+        }*/
+        
+        
+        
         System.out.println("clicked final buy");
     }
     //Lägger alla knappar i "unslected" kategorin förutom den tryckta
