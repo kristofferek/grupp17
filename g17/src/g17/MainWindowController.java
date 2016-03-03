@@ -235,7 +235,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
         //TODO
         categoryListView.getStyleClass().clear();
-        categoryListView.getStyleClass().add("showAll");
+        categoryListView.getStyleClass().add("currentTab");
         categoryListView.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
             @Override public ListCell<Category> call(ListView<Category> list) {
                 return new CategoryCell();

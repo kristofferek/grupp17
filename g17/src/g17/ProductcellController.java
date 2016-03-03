@@ -29,7 +29,6 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class ProductcellController implements Initializable {
 
     @FXML private ImageView imageImageView;
-    @FXML private Button infoButton;
     @FXML private Button favouriteButton;
     @FXML private Button buyButton;
     @FXML private Button addOneButton;
