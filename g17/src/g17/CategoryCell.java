@@ -50,13 +50,15 @@ public class CategoryCell extends ListCell<Category>{
                         System.out.println("In mouse event");
                         MainWindowController.setToMainWindow();
                         if(item.getCategoryName().equalsIgnoreCase("Visa allt")){
-                            MainWindowController.getInstance().setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
+                            MainWindowController.getInstance().setProductsToDisplay(IMatDataHandler.getInstance().getProducts(), 0);
+                            MainWindowController.getInstance().bringCartToFront();
                         }else{
                             List<Product> productsToDisplay = new ArrayList<>();
                             for(ProductCategory cat : item.getCategories()){
                                 productsToDisplay.addAll(IMatDataHandler.getInstance().getProducts(cat));
                             }
-                            MainWindowController.getInstance().setProductsToDisplay(productsToDisplay);
+                            MainWindowController.getInstance().setProductsToDisplay(productsToDisplay, 0);
+                            MainWindowController.getInstance().bringCartToFront();
                         }
                     }
                 });

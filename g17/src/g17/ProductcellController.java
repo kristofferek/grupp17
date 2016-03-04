@@ -165,7 +165,9 @@ public class ProductcellController implements Initializable {
     }
     
     public static void setProductsToDisplay(List<Product> products){
-        productsToDisplay = products;
+        if (products != null){
+            productsToDisplay = products;
+        }
         created = 0;
     }
     

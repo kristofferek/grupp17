@@ -95,7 +95,8 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                                     txtField.setText(99+"");
                                 }
                                 item.setAmount(Integer.parseInt(txtField.getText()));
-                                IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, true);
+                                price.setText(item.getTotal()+ " kr");
+                                //IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, true);
                                 lastValidProductAmountString = txtField.getText();
                             }
                         } catch (NumberFormatException e){

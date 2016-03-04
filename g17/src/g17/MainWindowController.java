@@ -42,7 +42,6 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
-import sun.swing.FilePane;
 
 /**
  * FXML Controller class
@@ -64,6 +63,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     private boolean isCartShowing = false;
     private boolean isListsShowing = false;
     private boolean isHistoryShowing = false;
+    private int lastHorizontalCells = 5;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -101,19 +101,29 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
         
         initCategoryListView();
-        setProductsToDisplay(IMatDataHandler.getInstance().getProducts());
+        setProductsToDisplay(IMatDataHandler.getInstance().getProducts(), 5);
         initCartDropDown();
         
     }
     
-    protected void setProductsToDisplay(List<Product> products){
-        
-        amountToDisplay = products.size();
+    protected void setProductsToDisplay(List<Product> products, int horizontalCells){
         ProductcellController.setProductsToDisplay(products);
-        addDisplayProducts();
+
+        //products == null betyder att vi vill behålla de produkter vi visade innan och endast byta gridsize
+        if (products != null){
+            amountToDisplay = products.size();
+            ProductcellController.setProductsToDisplay(products);
+        }
+        // om horizontalCells == 0 så vill vi behålla den gridsize vi har för tillfället
+        if (horizontalCells == 0){
+            addDisplayProducts(lastHorizontalCells);
+        }else {
+            addDisplayProducts(horizontalCells);
+            lastHorizontalCells = horizontalCells;
+        }
     }
     
-    protected void addDisplayProducts(){
+    protected void addDisplayProducts(int horizontalCells){
         //gridContainer.autosize();
         gridpane.getChildren().clear();
         gridContainer.autosize();
@@ -131,7 +141,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         int amountCreated = 0;
         try {
             while(amountCreated<amountToDisplay){
-                for(int x = 0; x < 5; x++){
+                for(int x = 0; x < horizontalCells; x++){
                     if(amountCreated == amountToDisplay){ break; }
                     
                     ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
@@ -274,7 +284,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void searchButtonActionPerformed(ActionEvent event){
         String searchWord = searchTextField.getText();
-        setProductsToDisplay(IMatDataHandler.getInstance().findProducts(searchWord));
+        setProductsToDisplay(IMatDataHandler.getInstance().findProducts(searchWord), 0);
     }
     
     @FXML
@@ -293,16 +303,18 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void favoriteButtonActionPerformed(ActionEvent event){
         mainView.toFront();
-        setProductsToDisplay(IMatDataHandler.getInstance().favorites());
+        setProductsToDisplay(IMatDataHandler.getInstance().favorites(), 0);
     }
     
     @FXML
     protected void cartButtonActionPerformed(ActionEvent event){
         if(isCartShowing){
             cartAnchorPane.toBack();
+            setProductsToDisplay(null, 5);
             isCartShowing = false;
         }else {
             cartAnchorPane.toFront();
+            setProductsToDisplay(null, 4);
             cartAnchorPane.setMouseTransparent(false);
             isCartShowing = true;
         }
@@ -348,6 +360,13 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         
         System.out.println("clicked final buy");
+    }
+    
+    protected void bringCartToFront(){
+        if (isCartShowing){
+            cartAnchorPane.toFront();
+            cartAnchorPane.setMouseTransparent(false);
+        }
     }
     
 }

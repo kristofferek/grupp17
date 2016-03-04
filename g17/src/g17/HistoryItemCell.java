@@ -53,7 +53,7 @@ public class HistoryItemCell extends ListCell<Order> {
                         for(int i=0; i<item.getItems().size(); i++){
                             products.add(item.getItems().get(i).getProduct());
                         }                       
-                        MainWindowController.getInstance().setProductsToDisplay(products);  
+                        MainWindowController.getInstance().setProductsToDisplay(products,0);  
                        }
                 });
             }
