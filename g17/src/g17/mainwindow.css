@@ -53,19 +53,17 @@ Gammal buybutton
     -fx-effect: dropshadow( three-pass-box , rgba(5,0,0,1) , 5, 0.0 , 0 , 1 );
     -fx-font-weight: bold;
     -fx-font-size: 1.1em;
-    
+    -fx-text-fill: #FFFFFF;
 
 }
 .buyButton{
     -fx-background-color: #3FC905;
 }
 .button-selected {
-    -fx-text-fill: #FFFFFF;
     -fx-background-color: #D32F2F;
 }
 
 .button-unselected {
-    -fx-text-fill: #FFFFFF;
     -fx-background-color: #C62828;
 }
 .currentTab{
@@ -76,29 +74,29 @@ Gammal buybutton
     -fx-background-image: url("pictures/fork-and-knife-in-cross.png");
 }
 .diaryimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/cheese-triangular-piece-with-holes.png");
 }
 .meatimage{
     -fx-background-image: url("pictures/heart-filled.png");
 }
 .fishimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/fish.png");
 }    
 .drinkimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/coffee-cup.png");
 }
 .greenimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/carrot.png");
 }
 .breadimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/bread-silhouette-side-view.png");
 }
 .fruitimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/apple-and-grapes.png");
 }
 .sugarimage{
     -fx-background-image: url("pictures/heart-filled.png");
 }
-.dryfoodlimage{
+.dryfoodimage{
     -fx-background-image: url("pictures/heart-filled.png");
 }

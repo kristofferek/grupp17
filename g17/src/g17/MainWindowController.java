@@ -18,19 +18,25 @@ import java.util.logging.Logger;
 
 import com.sun.javafx.css.StyleClassSet;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -38,6 +44,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 import se.chalmers.ait.dat215.project.CartEvent;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
@@ -90,6 +98,31 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private AnchorPane cartListAnchorPane;
     @FXML private Label cartAmountLabel;
     @FXML private Label cartPriceLabel;
+    
+    //Checkout object
+    @FXML private TextField nameLabel;
+    @FXML private TextField lastLabel;
+    @FXML private TextField adrLabel;
+    @FXML private TextField postLabel;
+    @FXML private TextField cityLabel;
+    @FXML private TextField phoneLabel;
+    @FXML private TextField mailLabel;
+    
+    @FXML private RadioButton masterRadio;
+    @FXML private RadioButton visaRadio;
+    @FXML private TextField cardNameLabel;
+    @FXML private TextField cardLabel;
+    @FXML private TextField cvvLabel;
+    @FXML private ChoiceBox monthBox;
+    @FXML private ChoiceBox yearBox;
+    
+    @FXML private DatePicker dateLabel;
+    
+    @FXML private CheckBox box8;
+    @FXML private CheckBox box11;
+    @FXML private CheckBox box14;
+    @FXML private CheckBox box17;
+    
     
     
     
@@ -204,7 +237,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         fruit.addProductCategory(ProductCategory.BERRY);
 
         //Vegtable category
-        Category greenFood = new Category("Grönsaker", "green");
+        Category greenFood = new Category("Grönsaker", "greenimage");
         greenFood.addProductCategory(ProductCategory.CABBAGE);
         greenFood.addProductCategory(ProductCategory.MELONS);
         greenFood.addProductCategory(ProductCategory.BERRY);
@@ -298,6 +331,40 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 return new ShoppingItemCell();
             }
         });
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
+        customer.setFirstName("Anders");
+        nameLabel.setText(customer.getFirstName());
+        lastLabel.setText(customer.getLastName());
+        adrLabel.setText(customer.getAddress());
+        postLabel.setText(customer.getPostCode());
+        cityLabel.setText(customer.getPostAddress());
+        phoneLabel.setText(customer.getMobilePhoneNumber());
+        mailLabel.setText(customer.getEmail());
+        
+        CreditCard card = IMatDataHandler.getInstance().getCreditCard();
+        ToggleGroup cardGroup = new ToggleGroup();
+        masterRadio.setUserData("MasterCard");
+        masterRadio.setToggleGroup(cardGroup);
+        visaRadio.setUserData("Visa");
+        visaRadio.setToggleGroup(cardGroup);
+        
+        cardNameLabel.setText(card.getHoldersName());
+        cardLabel.setText(card.getCardNumber());
+        cvvLabel.setText(card.getVerificationCode()+"");
+        
+        initCardComboBox();
+    }
+    
+    protected void initCardComboBox(){
+        ObservableList<String> months = 
+        FXCollections.observableArrayList(
+                "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+        monthBox.setItems(months); 
+        
+        ObservableList<String> years = 
+        FXCollections.observableArrayList(
+                "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023");
+        yearBox.setItems(years); 
     }
     
     
@@ -379,21 +446,12 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         cartAmountLabel.setText("Antal varor: " + amount + " st");
         cartPriceLabel.setText("Totalt: " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         initCartDropDown();
-        initCheckoutList();
     }
     
     @FXML
     protected void finalBuyButtonActionPerformed(ActionEvent event){
+        initCheckoutList();
         checkoutView.toFront();
-
-        /*if(isCartShowing){
-            isCartShowing = false;
-        }else {
-            cartAnchorPane.toFront();
-            cartAnchorPane.setMouseTransparent(false);
-            isCartShowing = true;
-        }*/
-        
         
         
         System.out.println("clicked final buy");

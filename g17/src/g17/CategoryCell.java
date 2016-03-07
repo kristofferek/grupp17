@@ -47,10 +47,14 @@ public class CategoryCell extends ListCell<Category>{
                 grid.setPadding(new Insets(5, 10, 5, 10));
                 grid.setAlignment(Pos.CENTER_LEFT);
                 
-                ImageView img = new ImageView();
-                img.setImage(new Image("file:pictures/fish.png"));
-                img.setFitHeight(64);
-                img.setFitWidth(64);
+                AnchorPane img = new AnchorPane();
+                img.getStyleClass().add(item.getCssStyle());
+                img.setMinWidth(64);
+                img.setMinHeight(64);
+                //ImageView img = new ImageView();
+                //img.setImage(new Image("file:pictures/fish.png"));
+                //img.setFitHeight(74);
+                //img.setFitWidth(74);
                 //img.getStyleClass().add(item.getCssStyle());
                 grid.add(img, 0, 0);
                 
