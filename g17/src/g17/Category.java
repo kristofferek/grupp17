@@ -17,13 +17,19 @@ public class Category {
     
     private List<ProductCategory> categories = new ArrayList<>();
     private final String categoryName;
+    private String cssStyle;
     
-    public Category(String categoryName){
+    public Category(String categoryName, String cssStyle){
         this.categoryName = categoryName;
+        this.cssStyle = cssStyle;
     }
     
     public String getCategoryName(){
         return categoryName;
+    }
+    
+    public String getCssStyle(){
+        return cssStyle;
     }
     
     public List<ProductCategory> getCategories(){

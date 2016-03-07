@@ -8,10 +8,16 @@ package g17;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -39,9 +45,20 @@ public class CategoryCell extends ListCell<Category>{
                 grid.setHgap(10);
                 grid.setVgap(6);
                 grid.setPadding(new Insets(5, 10, 5, 10));
+                grid.setAlignment(Pos.CENTER_LEFT);
+                
+                ImageView img = new ImageView();
+                img.setImage(new Image("file:pictures/fish.png"));
+                img.setFitHeight(64);
+                img.setFitWidth(64);
+                //img.getStyleClass().add(item.getCssStyle());
+                grid.add(img, 0, 0);
+                
                 Label name = new Label(item.getCategoryName());
                 name.getStyleClass().add("categorylist");
-                grid.add(name, 0, 0);
+                grid.add(name, 1, 0);
+                
+                grid.setMinHeight(64);
                 setGraphic(grid);
             
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {

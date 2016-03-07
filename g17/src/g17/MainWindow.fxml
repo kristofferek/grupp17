@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -50,7 +51,7 @@
          <top>
             <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="homeButton" fx:id="homeButton" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" styleClass="button-selected" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
+                  <Button id="homeButton" fx:id="homeButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="100.0" styleClass="button-selected" text="Hem" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="1787.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" />
                      </graphic>
@@ -64,11 +65,11 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="favoriteButton" fx:id="favoriteButton" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Favoriter" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="favoriteButton" fx:id="favoriteButton" alignment="CENTER" focusTraversable="false" layoutX="300.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Favoriter" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="350.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0">
+                  <TextField id="searchTextField" fx:id="searchTextField" accessibleHelp="Sök på en vara här.." alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" prefHeight="48.0" prefWidth="350.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="5.0">
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
@@ -76,7 +77,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="historyButton" fx:id="historyButton" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="historyButton" fx:id="historyButton" alignment="CENTER" focusTraversable="false" layoutX="425.0" layoutY="5.0" maxWidth="100.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Historik" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -86,7 +87,10 @@
                            <children>
                               <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" style="-fx-font-weight: bold;" text="0 kr" textAlignment="CENTER" textFill="WHITE" />
+                                    <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="0 kr" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font></Label>
                                     <Label alignment="CENTER" contentDisplay="CENTER" text="Visa kundvagn" textAlignment="CENTER" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
@@ -100,7 +104,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button id="listButton" fx:id="listButton" alignment="CENTER" focusTraversable="false" layoutX="550.0" layoutY="7.0" maxWidth="100.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="100.0" styleClass="button-unselected" text="Mina listor" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -110,7 +114,7 @@
          <left>
             <AnchorPane prefHeight="579.0" prefWidth="271.0" BorderPane.alignment="CENTER">
                <children>
-                  <ListView id="categoryListView" fx:id="categoryListView" prefHeight="532.0" prefWidth="253.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView id="categoryListView" fx:id="categoryListView" prefHeight="532.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </left>
@@ -205,8 +209,29 @@
                            <children>
                             <AnchorPane fx:id="cartListAnchorPane" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <ListView id="cartListView" fx:id="cartListView" focusTraversable="false" prefHeight="600.0" prefWidth="325.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="325.0" styleClass="buyButton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                                    <ListView id="cartListView" fx:id="cartListView" focusTraversable="false" prefHeight="600.0" prefWidth="325.0" styleClass="dropdowns" AnchorPane.bottomAnchor="182.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <AnchorPane prefHeight="2.0" prefWidth="325.0" style="-fx-background-color: #909090;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                    <FlowPane alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="325.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="130.0">
+                                       <children>
+                                          <Label fx:id="cartAmountLabel" prefHeight="40.0" text="Antal varor: 0 st">
+                                             <FlowPane.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </FlowPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="cartPriceLabel" alignment="CENTER_RIGHT" prefHeight="40.0" text="Totalt: 0 kr">
+                                             <FlowPane.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </FlowPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children></FlowPane>
+                                    <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="2.0" prefWidth="325.0" style="-fx-background-color: #909090;" AnchorPane.bottomAnchor="128.0" AnchorPane.rightAnchor="0.0" />
+                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="325.0" styleClass="buyButton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <font>
                                           <Font name="System Bold" size="41.0" />
                                        </font>

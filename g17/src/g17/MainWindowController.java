@@ -51,9 +51,6 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
  * @author Kristoffer
  */
 
-
-
-
 public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
@@ -91,6 +88,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
     @FXML private AnchorPane cartListAnchorPane;
+    @FXML private Label cartAmountLabel;
+    @FXML private Label cartPriceLabel;
     
     
     
@@ -176,27 +175,27 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     protected void initCategoryListView(){
 
         // Allt category
-        Category showAll = new Category("Visa allt");
+        Category showAll = new Category("Visa allt", "showallimage");
 
         // Bageri category
-        Category bread = new Category("Bageri");
+        Category bread = new Category("Bageri", "breadimage");
         bread.addProductCategory(ProductCategory.BREAD);
 
         // Chark och kött category
-        Category meat = new Category("Chark och kött");
+        Category meat = new Category("Chark och kött", "meatimage");
         meat.addProductCategory(ProductCategory.MEAT);
 
         // Bageri category
-        Category drinks = new Category("Drycker");
+        Category drinks = new Category("Drycker", "drinkimage");
         drinks.addProductCategory(ProductCategory.COLD_DRINKS);
         drinks.addProductCategory(ProductCategory.HOT_DRINKS);
 
         //Fisk category
-        Category fish = new Category("Fisk och skaldjur");
+        Category fish = new Category("Fisk och skaldjur", "fishimage");
         fish.addProductCategory(ProductCategory.FISH);
 
         //Frukt category
-        Category fruit= new Category("Frukt");
+        Category fruit= new Category("Frukt", "fruitimage");
         fruit.addProductCategory(ProductCategory.FRUIT);
         fruit.addProductCategory(ProductCategory.VEGETABLE_FRUIT);
         fruit.addProductCategory(ProductCategory.EXOTIC_FRUIT);
@@ -205,7 +204,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         fruit.addProductCategory(ProductCategory.BERRY);
 
         //Vegtable category
-        Category greenFood = new Category("Grönsaker");
+        Category greenFood = new Category("Grönsaker", "green");
         greenFood.addProductCategory(ProductCategory.CABBAGE);
         greenFood.addProductCategory(ProductCategory.MELONS);
         greenFood.addProductCategory(ProductCategory.BERRY);
@@ -213,11 +212,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
 
 
         // Mejeri category
-        Category diaries = new Category("Mejeri");
+        Category diaries = new Category("Mejeri", "diaryimage");
         diaries.addProductCategory(ProductCategory.DAIRIES);
 
         // Skafferi category
-        Category pantry = new Category("Skafferi");
+        Category pantry = new Category("Skafferi", "dryfoodimage");
         pantry.addProductCategory(ProductCategory.FLOUR_SUGAR_SALT);
         pantry.addProductCategory(ProductCategory.PASTA);
         pantry.addProductCategory(ProductCategory.POTATO_RICE);
@@ -226,7 +225,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         pantry.addProductCategory(ProductCategory.HERB);
 
         // Snask category
-        Category sweets = new Category("Snask");
+        Category sweets = new Category("Snask", "sugarimage");
         sweets.addProductCategory(ProductCategory.SWEET);
         sweets.addProductCategory(ProductCategory.NUTS_AND_SEEDS);
 
@@ -373,13 +372,19 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        int amount=0;
+        for (ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
+            amount += item.getAmount();
+            }
+        cartAmountLabel.setText("Antal varor: " + amount + " st");
+        cartPriceLabel.setText("Totalt: " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         initCartDropDown();
         initCheckoutList();
     }
     
     @FXML
     protected void finalBuyButtonActionPerformed(ActionEvent event){
-                    checkoutView.toFront();
+        checkoutView.toFront();
 
         /*if(isCartShowing){
             isCartShowing = false;
