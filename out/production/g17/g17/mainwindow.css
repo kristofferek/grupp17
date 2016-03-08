@@ -8,3 +8,63 @@
 .topbar{
     -fx-background-color: #e0e0e0;
 }
+
+.dropdowns{
+      -fx-background-color: #B5B5B5;
+}
+
+.categorylist {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+.nonfavourite{
+    -fx-background-image: url("pictures/heart-outline.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 64 64;
+    -fx-background-position: center center;
+}
+.favourite{
+    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 64 64;
+    -fx-background-position: center center;
+    }
+/*
+----KNAPPAJ!----
+*/
+
+/*
+Gammal buybutton
+
+.buyButton{
+    -fx-background-color: #689F38;
+    -fx-border-width: 4;
+    -fx-border-style: solid;
+    -fx-border-color: #558B2F;
+}*/
+.produktnamn {
+    -fx-font-size: 1.1em;
+}
+.buyButton,
+.button-selected,
+.button-unselected {
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(5,0,0,1) , 5, 0.0 , 0 , 1 );
+
+}
+.buyButton{
+    -fx-background-color: #3FC905;
+}
+.button-selected {
+    -fx-text-fill: #111111;
+    -fx-background-color: #FF3F3F;
+}
+
+.button-unselected {
+    -fx-text-fill: #000000;
+    -fx-background-color:rgba(240,0,39);
+}
+.currentTab{
+    -fx-background-color: #FF3F3F;
+}
