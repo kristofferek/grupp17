@@ -497,7 +497,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             card.setValidYear(Integer.parseInt(yearBox.getValue().toString()));
             card.setVerificationCode(Integer.parseInt(cvvLabel.getText()));
             
-            
+            IMatDataHandler.getInstance().placeOrder(); 
         }
         else {
             System.out.println("Var god och fyll i alla fält");

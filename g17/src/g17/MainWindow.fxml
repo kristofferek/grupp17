@@ -225,13 +225,6 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
-<<<<<<< HEAD
-                              <TextField fx:id="cardLabel" layoutX="1161.0" layoutY="225.0" prefHeight="31.0" prefWidth="158.0" AnchorPane.rightAnchor="311.0" />
-                              <TextField fx:id="cvvLabel" layoutX="1264.0" layoutY="285.0" prefHeight="31.0" prefWidth="53.0" />
-                              <Label layoutX="1342.0" layoutY="230.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
-                              <Label layoutX="1348.0" layoutY="290.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
-                              <Button layoutX="1162.0" layoutY="660.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="buyButton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
-=======
                               <RadioButton fx:id="masterRadio" layoutX="771.0" layoutY="108.0" mnemonicParsing="false" text="MasterCard">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -247,8 +240,7 @@
                               <TextField fx:id="cvvLabel" layoutX="872.0" layoutY="283.0" prefHeight="31.0" prefWidth="53.0" />
                               <Label layoutX="950.0" layoutY="228.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
                               <Label layoutX="956.0" layoutY="288.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
-                              <Button layoutX="770.0" layoutY="658.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="310.0" styleClass="buyButton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
->>>>>>> 851f462f3b23e26e8dc6c5c25983f898a9cbbd64
+                              <Button layoutX="770.0" layoutY="658.0" mnemonicParsing="false" prefHeight="126.0" onAction="#placeOrderButtonActionPerformed" prefWidth="310.0" styleClass="buyButton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
