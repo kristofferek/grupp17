@@ -1,7 +1,11 @@
 <component name="libraryTable">
   <library name="projectbackend-fx">
     <CLASSES>
+<<<<<<< HEAD
+      <root url="jar://$PROJECT_DIR$/resources - projekt (fx)/projectbackend-fx.jar!/" />
+=======
       <root url="jar://$USER_HOME$/.dat215/projectbackend-fx.jar!/" />
+>>>>>>> origin/master
     </CLASSES>
     <JAVADOC />
     <SOURCES />
