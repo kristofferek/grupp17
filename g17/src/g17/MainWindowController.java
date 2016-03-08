@@ -91,7 +91,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
-    @FXML private ListView cartListViewCheckout;
     @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
@@ -323,14 +322,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     }
     
     protected void initCheckoutList(){
-        shoppingItems.clear();
-        shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
-        cartListViewCheckout.setItems(FXCollections.observableList(shoppingItems));
-        cartListViewCheckout.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
-            @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
-                return new ShoppingItemCell();
-            }
-        });
+        
         Customer customer = IMatDataHandler.getInstance().getCustomer();
         customer.setFirstName("Anders");
         nameLabel.setText(customer.getFirstName());

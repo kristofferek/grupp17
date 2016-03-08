@@ -253,12 +253,6 @@
                                     <Font name="System Bold" size="41.0" />
                                  </font>
                               </Button>
-                              <ListView id="cartListView" fx:id="cartListViewCheckout" focusTraversable="false" layoutX="191.0" layoutY="85.0" prefHeight="740.0" prefWidth="335.0" styleClass="dropdowns" />
-                              <Label alignment="CENTER" layoutX="230.0" layoutY="19.0" text="I kundvagn nu:">
-                                 <font>
-                                    <Font size="40.0" />
-                                 </font>
-                              </Label>
                               <DatePicker fx:id="dateLabel" layoutX="1159.0" layoutY="465.0" prefHeight="31.0" prefWidth="158.0" AnchorPane.rightAnchor="313.0" />
                               <Label layoutX="1163.0" layoutY="421.0" text="Leverans">
                                  <font>
