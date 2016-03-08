@@ -219,17 +219,18 @@
                         </ScrollPane>
                         <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass">
                            <children>
-                              <TextField fx:id="lastLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="166.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="166.0" />
                               <TextField fx:id="nameLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="106.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="106.0" />
+                              <TextField fx:id="lastLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="166.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="166.0" />
                               <TextField fx:id="adrLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="226.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="226.0" />
-                              <TextField fx:id="phoneLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="406.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="406.0" />
                               <TextField fx:id="postLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="286.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="286.0" />
+                              <TextField fx:id="cityLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="346.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="346.0" />
+                              <TextField fx:id="phoneLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="406.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="406.0" />
+                              <TextField fx:id="mailLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="466.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="466.0" />
                               <Label layoutX="461.0" layoutY="111.0" text="Namn" AnchorPane.topAnchor="111.0" />
                               <Label layoutX="462.0" layoutY="171.0" text="Efternamn" AnchorPane.topAnchor="171.0" />
                               <Label layoutX="462.0" layoutY="231.0" text="Adess" AnchorPane.topAnchor="231.0" />
                               <Label layoutX="460.0" layoutY="291.0" text="Postnummer" AnchorPane.topAnchor="291.0" />
                               <Label layoutX="461.0" layoutY="411.0" text="Telefon" AnchorPane.topAnchor="411.0" />
-                              <TextField fx:id="mailLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="466.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="466.0" />
                               <Label layoutX="461.0" layoutY="471.0" text="Mail" AnchorPane.topAnchor="471.0" />
                               <Label layoutX="196.0" layoutY="63.0" text="Personuppgifter">
                                  <font>
@@ -241,6 +242,17 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
+                              <RadioButton fx:id="masterRadio" layoutX="771.0" layoutY="108.0" mnemonicParsing="false" text="MasterCard">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </RadioButton>
+                              <RadioButton fx:id="visaRadio" layoutX="952.0" layoutY="108.0" mnemonicParsing="false" text="Visa">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </RadioButton>
+                              <TextField fx:id="cardNameLabel" layoutX="769.0" layoutY="163.0" prefHeight="31.0" prefWidth="158.0" />
                               <TextField fx:id="cardLabel" layoutX="769.0" layoutY="223.0" prefHeight="31.0" prefWidth="158.0" />
                               <TextField fx:id="cvvLabel" layoutX="872.0" layoutY="283.0" prefHeight="31.0" prefWidth="53.0" />
                               <Label layoutX="950.0" layoutY="228.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
@@ -262,23 +274,11 @@
                               <Label layoutX="952.0" layoutY="468.0" prefWidth="129.0" text="Datum" />
                               <CheckBox fx:id="box8" focusTraversable="false" layoutX="772.0" layoutY="563.0" mnemonicParsing="false" text="8:00 - 11:00" />
                               <CheckBox fx:id="box11" focusTraversable="false" layoutX="952.0" layoutY="563.0" mnemonicParsing="false" prefWidth="129.0" text="11:00 - 14:00" />
-                              <CheckBox fx:id="box17" focusTraversable="false" layoutX="952.0" layoutY="609.0" mnemonicParsing="false" prefWidth="129.0" text="17:00 - 20:00" />
                               <CheckBox fx:id="box14" focusTraversable="false" layoutX="772.0" layoutY="609.0" mnemonicParsing="false" text="14:00 - 17:00" />
+                              <CheckBox fx:id="box17" focusTraversable="false" layoutX="952.0" layoutY="609.0" mnemonicParsing="false" prefWidth="129.0" text="17:00 - 20:00" />
                               <Label layoutX="771.0" layoutY="528.0" text="Tid (Välj minst ett alternativ)" />
-                              <TextField fx:id="cityLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="346.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="346.0" />
                               <Label layoutX="462.0" layoutY="353.0" text="Postort" AnchorPane.topAnchor="353.0" />
-                              <TextField fx:id="cardNameLabel" layoutX="769.0" layoutY="163.0" prefHeight="31.0" prefWidth="158.0" />
                               <Label layoutX="952.0" layoutY="168.0" prefHeight="21.0" prefWidth="129.0" text="Kortets innehavare" />
-                              <RadioButton fx:id="masterRadio" layoutX="771.0" layoutY="108.0" mnemonicParsing="false" text="MasterCard">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </RadioButton>
-                              <RadioButton fx:id="visaRadio" layoutX="952.0" layoutY="108.0" mnemonicParsing="false" text="Visa">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </RadioButton>
                               <ChoiceBox fx:id="monthBox" layoutX="769.0" layoutY="343.0" prefHeight="31.0" prefWidth="89.0" />
                               <Label layoutX="875.0" layoutY="348.0" prefHeight="21.0" prefWidth="50.0" text="Månad" />
                               <ChoiceBox fx:id="yearBox" layoutX="952.0" layoutY="343.0" prefHeight="31.0" prefWidth="93.0" />
