@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.sun.javafx.css.StyleClassSet;
+import java.time.chrono.Chronology;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -332,7 +333,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             }
         });
         Customer customer = IMatDataHandler.getInstance().getCustomer();
-        customer.setFirstName("Anders");
         nameLabel.setText(customer.getFirstName());
         lastLabel.setText(customer.getLastName());
         adrLabel.setText(customer.getAddress());
@@ -347,11 +347,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         masterRadio.setToggleGroup(cardGroup);
         visaRadio.setUserData("Visa");
         visaRadio.setToggleGroup(cardGroup);
+        masterRadio.setSelected(true);
         
         cardNameLabel.setText(card.getHoldersName());
         cardLabel.setText(card.getCardNumber());
         cvvLabel.setText(card.getVerificationCode()+"");
-        
         initCardComboBox();
     }
     
@@ -360,11 +360,13 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         FXCollections.observableArrayList(
                 "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
         monthBox.setItems(months); 
+        monthBox.setValue(months.get(0));
         
         ObservableList<String> years = 
         FXCollections.observableArrayList(
                 "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023");
         yearBox.setItems(years); 
+        yearBox.setValue(years.get(0));
     }
     
     
@@ -477,5 +479,42 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         listButton.getStyleClass().add("button-unselected");
         newSelected.getStyleClass().clear();
         newSelected.getStyleClass().add("button-selected");
+    }
+    @FXML
+    protected void placeOrderButtonActionPerformed(ActionEvent event){
+        
+        if(check(nameLabel) && check(lastLabel) && check(adrLabel) && check(postLabel) &&
+            check(cityLabel) && check(phoneLabel) && check(mailLabel) && check(cardNameLabel) &&
+            check(cvvLabel) && check(dateLabel.getEditor())){
+
+            System.out.println("Din order är nu bekräftad.");
+            
+            Customer cust= IMatDataHandler.getInstance().getCustomer();
+            cust.setFirstName(nameLabel.getText());
+            cust.setLastName(lastLabel.getText());
+            cust.setAddress(adrLabel.getText());
+            cust.setPostAddress(cityLabel.getText());
+            cust.setPostCode(postLabel.getText());
+            cust.setMobilePhoneNumber(phoneLabel.getText());
+            cust.setEmail(mailLabel.getText());
+            
+            CreditCard card = IMatDataHandler.getInstance().getCreditCard();
+            card.setCardNumber(cardLabel.getText());
+            card.setCardType((masterRadio.selectedProperty().getValue()==true?masterRadio.getText():visaRadio.getText()));
+            card.setHoldersName(cardNameLabel.getText());
+            card.setValidMonth(Integer.parseInt(monthBox.getValue().toString()));
+            card.setValidYear(Integer.parseInt(yearBox.getValue().toString()));
+            card.setVerificationCode(Integer.parseInt(cvvLabel.getText()));
+            
+            
+        }
+        else {
+            System.out.println("Var god och fyll i alla fält");
+        }
+    }
+    
+    //Returnerar false om textfältet är tomt
+    private boolean check(TextField t){
+        return !(t.getText().equals(""));
     }
 }

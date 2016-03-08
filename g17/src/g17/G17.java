@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
  *
@@ -35,6 +36,11 @@ public class G17 extends Application {
         primaryStage.setTitle("iMat");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+    
+    @Override
+    public void stop(){
+        IMatDataHandler.getInstance().shutDown();
     }
 
     /**
