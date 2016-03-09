@@ -133,6 +133,19 @@
                <children>
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
+                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="55.0" prefHeight="500.0" prefWidth="310.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="308.0">
+                                       <children>
+                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="0.0">
@@ -140,19 +153,6 @@
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
                                        <children>
                                           <ListView id="listListView" fx:id="listListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="74.0" prefHeight="382.0" prefWidth="260.0" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="258.0">
-                                       <children>
-                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -240,7 +240,7 @@
                               <TextField fx:id="cvvLabel" layoutX="872.0" layoutY="283.0" prefHeight="31.0" prefWidth="53.0" />
                               <Label layoutX="950.0" layoutY="228.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
                               <Label layoutX="956.0" layoutY="288.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
-                              <Button layoutX="770.0" layoutY="658.0" mnemonicParsing="false" prefHeight="126.0" onAction="#placeOrderButtonActionPerformed" prefWidth="310.0" styleClass="buyButton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
+                              <Button layoutX="770.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="buyButton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>

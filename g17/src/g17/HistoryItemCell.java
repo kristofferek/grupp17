@@ -8,9 +8,11 @@ package g17;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.Order;
@@ -29,8 +31,10 @@ public class HistoryItemCell extends ListCell<Order> {
         super.updateItem(item, empty);
         
         if (item != null){
+            
             if (empty) {
                 setText(null);
+                
                 setGraphic(null);
             } else {
                 setText(null);          
@@ -40,21 +44,32 @@ public class HistoryItemCell extends ListCell<Order> {
                 grid.setVgap(6);
                 grid.setPadding(new Insets(2, 5, 2, 5));
                 
-                Label name = new Label(item.getDate().toString());
+                int price = 0;
+                for(int i=0; i<item.getItems().size(); i++){
+                          price += item.getItems().get(i).getProduct().getPrice();
+                        }
+                
+                Label name = new Label(item.getDate().toString()+" - "+price+" kr");
                 name.getStyleClass().add("categorylist");
-                grid.add(name, 1, 0);             
+                grid.add (name, 1, 0);             
                 
                 setGraphic(grid);
             
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     private List<Product> products = new ArrayList<>();
+                    
                     @Override
                     public void handle(MouseEvent event) {                   
                         for(int i=0; i<item.getItems().size(); i++){
                             products.add(item.getItems().get(i).getProduct());
-                        }                       
-                        MainWindowController.getInstance().setProductsToDisplay(products,0);  
+                        }
+                        
+                        MainWindowController.getInstance().setProductsToDisplay(products,0);
+                        MainWindowController.setToMainWindow();
+                        MainWindowController.setIsHistoryShowing(false);
+                        products.clear();
                        }
+                    
                 });
             }
         }
