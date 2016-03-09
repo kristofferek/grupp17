@@ -85,7 +85,8 @@ public class ProductcellController implements Initializable {
     
     private void updateTotalPrice(){
         if(product != null){
-            priceTotalLabel.setText("" + product.getPrice() * getProductAmount() + " kr");
+            double price = product.getPrice()*getProductAmount();
+            priceTotalLabel.setText("" + String.format("%.2f", price) + " kr");
         }
     }
     

@@ -62,7 +62,8 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                 pane.setCenter(name);
                 
                 GridPane priceAndDelete = new GridPane();
-                Label price = new Label(item.getTotal()+" kr");
+                double cost = item.getTotal();
+                Label price = new Label(String.format("%.2f", cost)+" kr");
                 price.setTextAlignment(TextAlignment.CENTER);
                 GridPane.setMargin(price, new Insets(0,10,0,0));
                 priceAndDelete.add(price, 0, 0);
@@ -95,7 +96,8 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                                     txtField.setText(99+"");
                                 }
                                 item.setAmount(Integer.parseInt(txtField.getText()));
-                                price.setText(item.getTotal()+ " kr");
+                                double cost2 = item.getTotal();
+                                price.setText(String.format("%.2f", cost2)+ " kr");
                                 //IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, true);
                                 lastValidProductAmountString = txtField.getText();
                             }

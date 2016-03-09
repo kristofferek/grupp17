@@ -288,16 +288,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         getInstance().mainView.toFront();
     }
     
+    public static void setIsHistoryShowing(boolean set){    
+            getInstance().isHistoryShowing = set;
+    }
+    
     protected void initHistoryDropDown(){
         orderHistory.clear();
         historyListView.getItems().clear();
-       
-        //for test purposes
-        for(int i=0; i<10; i++){
-            IMatDataHandler.getInstance().placeOrder(false);
-        }
         
-       
         orderHistory.addAll(IMatDataHandler.getInstance().getOrders());
         historyListView.setItems(FXCollections.observableList(orderHistory));
         
@@ -438,15 +436,16 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         updateCartLabels();
         initCartDropDown();
     }
-    
+   
     private void updateCartLabels(){
-        priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        double price = IMatDataHandler.getInstance().getShoppingCart().getTotal();
+        priceLabel.setText(String.format("%.2f", price) + " kr");
         int amount=0;
         for (ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
             amount += item.getAmount();
             }
         cartAmountLabel.setText("Antal varor: " + amount + " st");
-        cartPriceLabel.setText("Totalt: " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        cartPriceLabel.setText("Totalt: " + String.format("%.2f", price) + " kr");
     }
     
     @FXML
