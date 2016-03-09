@@ -34,6 +34,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class ShoppingItemCell extends ListCell<ShoppingItem>{
     
     String lastValidProductAmountString = "1";
+    static int count = 0;
     
     @Override 
     protected void updateItem(ShoppingItem item, boolean empty) {
@@ -106,6 +107,17 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                         }
                     }
                 });
+            }
+        } else {
+            System.out.println(count +"");
+            if (count <1){    
+                Label noProducts = new Label("Din kundvagn är tom");
+                noProducts.getStyleClass().add("produktnamn");
+                setGraphic(noProducts);
+                count++;
+            } else {
+                setText(null);
+                setGraphic(null);
             }
         }
     }

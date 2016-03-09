@@ -309,6 +309,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     protected void initCartDropDown(){
         shoppingItems.clear();
         shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
+        
+        if (shoppingItems.size()==0){
+            shoppingItems.add(null);
+        }
+                
         cartListView.setItems(FXCollections.observableList(shoppingItems));
         cartListView.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
             @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
