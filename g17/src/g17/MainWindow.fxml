@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -25,7 +33,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -168,7 +176,8 @@
                                                 <Font name="System Bold" size="19.0" />
                                              </font>
                                           </Label>
-                                       </children></FlowPane>
+                                       </children>
+                                    </FlowPane>
                                     <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="2.0" prefWidth="325.0" style="-fx-background-color: #909090;" AnchorPane.bottomAnchor="128.0" AnchorPane.rightAnchor="0.0" />
                                     <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="325.0" styleClass="newbuybutton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <font>
