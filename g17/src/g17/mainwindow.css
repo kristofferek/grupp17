@@ -132,7 +132,33 @@ Gammal buybutton
     -fx-border-width: 1px;
     -fx-text-fill: #ffffff;
     -fx-padding: 10px 10px 10px 10px;
+    
+    animation-delay: 5s;
+    animation-duration: 4s;
+    animation-name: example;
 }
+
+.justbought {
+    -fx-background-color: linear-gradient(to bottom, #8BC34A, #000000);
+}
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
 
 .newbuybutton:hover {
     -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
