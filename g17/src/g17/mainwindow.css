@@ -10,12 +10,13 @@
 }
 
 .dropdowns{
-      -fx-background-color: #E0E0E0;
+      -fx-background-color: #e0e0e0;
 }
 
 .categorylist {
     -fx-font-size: 1.2em;
     -fx-font-weight: bold;
+    -fx-text-fill: #212121;
 }
 .nonfavourite{
     -fx-background-image: url("pictures/heart-outline.png");
@@ -99,4 +100,39 @@ Gammal buybutton
 }
 .dryfoodimage{
     -fx-background-image: url("pictures/ear-of-wheat.png");
+}
+.newbutton {
+    -fx-font-size: 21.0px;
+    -fx-font-family: Arial;
+    -fx-font-weight:bold;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    -fx-border-radius: 1px;
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 1px;
+    -fx-text-fill: #212121;
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+.newbutton:focused {
+    -fx-background-color: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+}
+
+.newbutton:hover {
+    -fx-background-color: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+}
+
+.newbuybutton {
+    -fx-font-size: 21.0px;
+    -fx-font-family: Arial;
+    -fx-font-weight:bold;
+    -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
+    -fx-border-radius: 1px;
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 1px;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+.newbuybutton:hover {
+    -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
 }
