@@ -263,13 +263,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
 
         //Lägger till alla kategorier i en lista
         listViewCategories.add(showAll);
-        listViewCategories.add(bread);
-        listViewCategories.add(meat);
-        listViewCategories.add(drinks);
-        listViewCategories.add(fish);
+        listViewCategories.add(fruit);
         listViewCategories.add(greenFood);
+        listViewCategories.add(bread);
         listViewCategories.add(diaries);
+        listViewCategories.add(meat);
+        listViewCategories.add(fish);
         listViewCategories.add(pantry);
+        listViewCategories.add(drinks);
         listViewCategories.add(sweets);
 
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
@@ -392,6 +393,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     protected void favoriteButtonActionPerformed(ActionEvent event){
         mainView.toFront();
         setProductsToDisplay(IMatDataHandler.getInstance().favorites(), 0);
+        bringCartToFront();
         updateButtons(favoriteButton);
     }
     
@@ -467,7 +469,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     }
     //Lägger alla knappar i "unslected" kategorin förutom den tryckta
     private void updateButtons(Button newSelected){
-        favoriteButton.getStyleClass().clear();
+        /*favoriteButton.getStyleClass().clear();
         favoriteButton.getStyleClass().add("button-unselected");
         homeButton.getStyleClass().clear();
         homeButton.getStyleClass().add("button-unselected");
@@ -479,6 +481,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         listButton.getStyleClass().add("button-unselected");
         newSelected.getStyleClass().clear();
         newSelected.getStyleClass().add("button-selected");
+        */
     }
     @FXML
     protected void placeOrderButtonActionPerformed(ActionEvent event){
@@ -506,7 +509,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             card.setValidYear(Integer.parseInt(yearBox.getValue().toString()));
             card.setVerificationCode(Integer.parseInt(cvvLabel.getText()));
             
-            IMatDataHandler.getInstance().placeOrder(); 
+            IMatDataHandler.getInstance().placeOrder();
+            IMatDataHandler.getInstance().getShoppingCart().clear();
         }
         else {
             System.out.println("Var god och fyll i alla fält");
