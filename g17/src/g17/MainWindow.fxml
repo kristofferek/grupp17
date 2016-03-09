@@ -107,10 +107,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button id="listButton" fx:id="listButton" alignment="CENTER" focusTraversable="false" layoutX="614.0" layoutY="5.0" mnemonicParsing="false" onAction="#listButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Mina listor" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Button>
                </children>
             </AnchorPane>
          </top>
@@ -139,19 +135,7 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="216.0" prefHeight="382.0" prefWidth="202.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
-                                       <children>
-                                          <ListView id="listListView" fx:id="listListView" prefHeight="380.0" prefWidth="200.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
+                        <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0" />
                         <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="759.0" prefWidth="1089.0">
                            <children>
                             <AnchorPane fx:id="cartListAnchorPane" layoutX="1273.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
