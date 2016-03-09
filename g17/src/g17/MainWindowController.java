@@ -38,6 +38,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -77,7 +81,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
     @FXML private Button homeButton;
-    @FXML private Button rundturButton;
     @FXML private Button historyButton;
     @FXML private Button favoriteButton;
     @FXML private Button cartButton;
@@ -96,7 +99,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private AnchorPane cartListAnchorPane;
     @FXML private Label cartAmountLabel;
     @FXML private Label cartPriceLabel;
-    
+
     //Checkout object
     @FXML private TextField nameLabel;
     @FXML private TextField lastLabel;
@@ -134,8 +137,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         setProductsToDisplay(IMatDataHandler.getInstance().getProducts(), 5);
         initCartDropDown();
         System.out.println(historyButton.getStyleClass().toString());
-        updateButtons(homeButton);
-        
     }
     
     protected void setProductsToDisplay(List<Product> products, int horizontalCells){
@@ -316,7 +317,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 
         cartListView.setItems(FXCollections.observableList(shoppingItems));
         cartListView.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
-            @Override public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
+            @Override
+            public ListCell<ShoppingItem> call(ListView<ShoppingItem> list) {
                 return new ShoppingItemCell();
             }
         });
@@ -374,6 +376,12 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         String searchWord = searchTextField.getText();
         setProductsToDisplay(IMatDataHandler.getInstance().findProducts(searchWord), 0);
     }
+    @FXML
+    protected void searchTextFieldActionPreformed(KeyEvent event){
+        if(event.getCode()== KeyCode.ENTER){
+            searchButtonActionPerformed(null);
+        }
+    }
     
     @FXML
     protected void historyButtonActionPerformed(ActionEvent event){
@@ -386,7 +394,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             isHistoryShowing = true;
             initHistoryDropDown();
         }
-        updateButtons(historyButton);
     }
     
     @FXML
@@ -394,7 +401,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         mainView.toFront();
         setProductsToDisplay(IMatDataHandler.getInstance().favorites(), 0);
         bringCartToFront();
-        updateButtons(favoriteButton);
     }
     
     @FXML
@@ -410,12 +416,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             isCartShowing = true;
         }
     }
-    
+
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
         // TODO
         mainView.toFront();
-        updateButtons(homeButton);
     }
 
     @Override
@@ -452,22 +457,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             cartAnchorPane.setMouseTransparent(false);
             finalBuyButton.setVisible(true);
         }
-    }
-    //Lägger alla knappar i "unslected" kategorin förutom den tryckta
-    private void updateButtons(Button newSelected){
-        /*favoriteButton.getStyleClass().clear();
-        favoriteButton.getStyleClass().add("button-unselected");
-        homeButton.getStyleClass().clear();
-        homeButton.getStyleClass().add("button-unselected");
-        historyButton.getStyleClass().clear();
-        historyButton.getStyleClass().add("button-unselected");
-        rundturButton.getStyleClass().clear();
-        rundturButton.getStyleClass().add("button-unselected");
-        listButton.getStyleClass().clear();
-        listButton.getStyleClass().add("button-unselected");
-        newSelected.getStyleClass().clear();
-        newSelected.getStyleClass().add("button-selected");
-        */
     }
     @FXML
     protected void placeOrderButtonActionPerformed(ActionEvent event){

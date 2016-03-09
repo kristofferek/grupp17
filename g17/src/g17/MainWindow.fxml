@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -25,7 +33,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -63,8 +71,15 @@
                   <Button id="favoriteButton" fx:id="favoriteButton" alignment="CENTER" focusTraversable="false" layoutX="314.0" layoutY="5.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Favoriter" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor></Button>
-                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1057.0" layoutY="8.0" prefHeight="48.0" prefWidth="350.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="494.0" AnchorPane.topAnchor="8.0">
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="heartImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pictures/heart-filled.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" onKeyPressed="#searchTextFieldActionPreformed" prefHeight="48.0" prefWidth="350.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="8.0">
                      <font>
                         <Font size="20.0" />
                      </font></TextField>

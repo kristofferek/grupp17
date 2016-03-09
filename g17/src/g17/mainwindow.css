@@ -101,6 +101,7 @@ Gammal buybutton
 .dryfoodimage{
     -fx-background-image: url("pictures/ear-of-wheat.png");
 }
+
 .newbutton {
     -fx-font-size: 21.0px;
     -fx-font-family: Arial;
