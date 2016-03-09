@@ -109,7 +109,6 @@ public class ShoppingItemCell extends ListCell<ShoppingItem>{
                 });
             }
         } else {
-            System.out.println(count +"");
             if (count <1){    
                 Label noProducts = new Label("Din kundvagn är tom");
                 noProducts.getStyleClass().add("produktnamn");
