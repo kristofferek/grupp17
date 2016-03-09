@@ -123,8 +123,17 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private CheckBox box11;
     @FXML private CheckBox box14;
     @FXML private CheckBox box17;
-    
-    
+
+    //Checkout labels
+    @FXML private Label errorMsg;
+    @FXML private Label namnText;
+    @FXML private Label efternamnText;
+    @FXML private Label adressText;
+    @FXML private Label postText;
+    @FXML private Label postortText;
+    @FXML private Label telefonText;
+    @FXML private Label mailText;
+
     /**
      * Initializes the controller class.
      */
@@ -344,6 +353,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         cardLabel.setText(card.getCardNumber());
         cvvLabel.setText(card.getVerificationCode()+"");
         initCardComboBox();
+
+        errorMsg.setVisible(false);
     }
     
     protected void initCardComboBox(){
@@ -483,7 +494,42 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             IMatDataHandler.getInstance().getShoppingCart().clear();
         }
         else {
-            System.out.println("Var god och fyll i alla fält");
+            errorMsg.setVisible(true);
+            if(!check(nameLabel)){
+                namnText.getStyleClass().set(0,"redText");
+            }else{
+                namnText.getStyleClass().set(0,"label");
+            }
+            if(!check(lastLabel)){
+                efternamnText.getStyleClass().set(0,"redText");
+            }else{
+                efternamnText.getStyleClass().set(0,"label");
+            }
+            if(!check(adrLabel)){
+                adressText.getStyleClass().set(0,"redText");
+            }else{
+                adressText.getStyleClass().set(0,"label");
+            }
+            if(!check(postLabel)){
+                postText.getStyleClass().set(0,"redText");
+            }else{
+                postText.getStyleClass().set(0,"label");
+            }
+            if(!check(cityLabel)){
+                postortText.getStyleClass().set(0,"redText");
+            }else{
+                postortText.getStyleClass().set(0,"label");
+            }
+            if(!check(phoneLabel)){
+                telefonText.getStyleClass().set(0, "redText");
+            }else{
+                telefonText.getStyleClass().set(0,"label");
+            }
+            if(!check(mailLabel)){
+                mailText.getStyleClass().set(0,"redText");
+            }else{
+                mailText.getStyleClass().set(0,"label");
+            }
         }
     }
     

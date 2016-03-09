@@ -42,19 +42,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0849056">
-              <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProductcellController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/ProductcellController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,24 +82,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2387218">
+              <caret line="497" column="34" selection-start-line="497" selection-start-column="34" selection-end-line="497" selection-end-column="34" />
               <folding>
-                <element signature="e#10795#10796#0" expanded="true" />
-                <element signature="e#10852#10853#0" expanded="true" />
-                <element signature="e#10924#10925#0" expanded="true" />
-                <element signature="e#10972#10973#0" expanded="true" />
-                <element signature="e#11034#11035#0" expanded="true" />
+                <element signature="e#0#20124#0" expanded="true" />
                 <element signature="e#11094#11095#0" expanded="true" />
-                <element signature="e#11605#11606#0" expanded="true" />
-                <element signature="e#11673#11674#0" expanded="true" />
-                <element signature="e#12152#12153#0" expanded="true" />
-                <element signature="e#12213#12214#0" expanded="true" />
-                <element signature="e#13930#13931#0" expanded="true" />
-                <element signature="e#13961#13962#0" expanded="true" />
+                <element signature="e#11151#11152#0" expanded="true" />
+                <element signature="e#11223#11224#0" expanded="true" />
+                <element signature="e#11271#11272#0" expanded="true" />
+                <element signature="e#11333#11334#0" expanded="true" />
+                <element signature="e#11393#11394#0" expanded="true" />
+                <element signature="e#11904#11905#0" expanded="true" />
+                <element signature="e#11972#11973#0" expanded="true" />
+                <element signature="e#12451#12452#0" expanded="true" />
+                <element signature="e#12512#12513#0" expanded="true" />
+                <element signature="e#14266#14267#0" expanded="true" />
+                <element signature="e#14297#14298#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -138,9 +126,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/g17/src/g17/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/g17/src/g17/mainwindow.css" />
         <option value="$PROJECT_DIR$/g17/src/g17/MainWindowController.java" />
-        <option value="$PROJECT_DIR$/g17/src/g17/MainWindow.fxml" />
       </list>
     </option>
   </component>
@@ -468,35 +456,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
-          <folding>
-            <element signature="e#10795#10796#0" expanded="true" />
-            <element signature="e#10852#10853#0" expanded="true" />
-            <element signature="e#10924#10925#0" expanded="true" />
-            <element signature="e#10972#10973#0" expanded="true" />
-            <element signature="e#11034#11035#0" expanded="true" />
-            <element signature="e#11094#11095#0" expanded="true" />
-            <element signature="e#11605#11606#0" expanded="true" />
-            <element signature="e#11673#11674#0" expanded="true" />
-            <element signature="e#12152#12153#0" expanded="true" />
-            <element signature="e#12213#12214#0" expanded="true" />
-            <element signature="e#13930#13931#0" expanded="true" />
-            <element signature="e#13961#13962#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/g17/src/g17/HistoryItemCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -537,6 +496,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3207547">
+          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/g17/src/g17/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -545,14 +515,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0849056">
-          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2387218">
+          <caret line="497" column="34" selection-start-line="497" selection-start-column="34" selection-end-line="497" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#20124#0" expanded="true" />
+            <element signature="e#11094#11095#0" expanded="true" />
+            <element signature="e#11151#11152#0" expanded="true" />
+            <element signature="e#11223#11224#0" expanded="true" />
+            <element signature="e#11271#11272#0" expanded="true" />
+            <element signature="e#11333#11334#0" expanded="true" />
+            <element signature="e#11393#11394#0" expanded="true" />
+            <element signature="e#11904#11905#0" expanded="true" />
+            <element signature="e#11972#11973#0" expanded="true" />
+            <element signature="e#12451#12452#0" expanded="true" />
+            <element signature="e#12512#12513#0" expanded="true" />
+            <element signature="e#14266#14267#0" expanded="true" />
+            <element signature="e#14297#14298#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

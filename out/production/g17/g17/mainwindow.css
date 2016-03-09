@@ -30,6 +30,9 @@
     -fx-background-size: 64 64;
     -fx-background-position: center center;
     }
+.redText{
+    -fx-text-fill: #ff0000;
+}
 /*
 ----KNAPPAJ!----
 */

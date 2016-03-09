@@ -211,12 +211,12 @@
                               <TextField fx:id="cityLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="346.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="346.0" />
                               <TextField fx:id="phoneLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="406.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="406.0" />
                               <TextField fx:id="mailLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="466.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="466.0" />
-                              <Label layoutX="461.0" layoutY="111.0" text="Namn" AnchorPane.topAnchor="111.0" />
-                              <Label layoutX="462.0" layoutY="171.0" text="Efternamn" AnchorPane.topAnchor="171.0" />
-                              <Label layoutX="462.0" layoutY="231.0" text="Adess" AnchorPane.topAnchor="231.0" />
-                              <Label layoutX="460.0" layoutY="291.0" text="Postnummer" AnchorPane.topAnchor="291.0" />
-                              <Label layoutX="461.0" layoutY="411.0" text="Telefon" AnchorPane.topAnchor="411.0" />
-                              <Label layoutX="461.0" layoutY="471.0" text="Mail" AnchorPane.topAnchor="471.0" />
+                              <Label fx:id="namnText" layoutX="461.0" layoutY="111.0" text="Namn" AnchorPane.topAnchor="111.0" />
+                              <Label fx:id="efternamnText" layoutX="462.0" layoutY="171.0" text="Efternamn" AnchorPane.topAnchor="171.0" />
+                              <Label fx:id="adressText" layoutX="462.0" layoutY="231.0" text="Adress" AnchorPane.topAnchor="231.0" />
+                              <Label fx:id="postText" layoutX="460.0" layoutY="291.0" text="Postnummer" AnchorPane.topAnchor="291.0" />
+                              <Label fx:id="telefonText" layoutX="461.0" layoutY="411.0" text="Telefon" AnchorPane.topAnchor="411.0" />
+                              <Label fx:id="mailText" layoutX="461.0" layoutY="471.0" text="Mail" AnchorPane.topAnchor="471.0" />
                               <Label layoutX="196.0" layoutY="63.0" text="Personuppgifter">
                                  <font>
                                     <Font size="21.0" />
@@ -264,12 +264,17 @@
                               <CheckBox fx:id="box14" focusTraversable="false" layoutX="772.0" layoutY="609.0" mnemonicParsing="false" text="14:00 - 17:00" />
                               <CheckBox fx:id="box17" focusTraversable="false" layoutX="952.0" layoutY="609.0" mnemonicParsing="false" prefWidth="129.0" text="17:00 - 20:00" />
                               <Label layoutX="771.0" layoutY="528.0" text="Tid (Välj minst ett alternativ)" />
-                              <Label layoutX="462.0" layoutY="353.0" text="Postort" AnchorPane.topAnchor="353.0" />
+                              <Label fx:id="postortText" layoutX="462.0" layoutY="353.0" text="Postort" AnchorPane.topAnchor="353.0" />
                               <Label layoutX="952.0" layoutY="168.0" prefHeight="21.0" prefWidth="129.0" text="Kortets innehavare" />
                               <ChoiceBox fx:id="monthBox" layoutX="769.0" layoutY="343.0" prefHeight="31.0" prefWidth="89.0" />
                               <Label layoutX="875.0" layoutY="348.0" prefHeight="21.0" prefWidth="50.0" text="Månad" />
                               <ChoiceBox fx:id="yearBox" layoutX="952.0" layoutY="343.0" prefHeight="31.0" prefWidth="93.0" />
                               <Label layoutX="1057.0" layoutY="348.0" prefHeight="21.0" prefWidth="22.0" text="År" />
+                              <Label fx:id="errorMsg" layoutX="220.0" layoutY="696.0" text="Var god fyll i alla fält" textFill="RED">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>
