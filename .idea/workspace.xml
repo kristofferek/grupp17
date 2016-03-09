@@ -32,6 +32,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.649374">
+              <caret line="332" column="75" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#22341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/Category.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +64,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="mainwindow.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ShoppingItemCell.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/ShoppingItemCell.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -77,40 +99,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2387218">
-              <caret line="497" column="34" selection-start-line="497" selection-start-column="34" selection-end-line="497" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#20124#0" expanded="true" />
-                <element signature="e#11094#11095#0" expanded="true" />
-                <element signature="e#11151#11152#0" expanded="true" />
-                <element signature="e#11223#11224#0" expanded="true" />
-                <element signature="e#11271#11272#0" expanded="true" />
-                <element signature="e#11333#11334#0" expanded="true" />
-                <element signature="e#11393#11394#0" expanded="true" />
-                <element signature="e#11904#11905#0" expanded="true" />
-                <element signature="e#11972#11973#0" expanded="true" />
-                <element signature="e#12451#12452#0" expanded="true" />
-                <element signature="e#12512#12513#0" expanded="true" />
-                <element signature="e#14266#14267#0" expanded="true" />
-                <element signature="e#14297#14298#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainwindow.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -456,14 +444,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/HistoryItemCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/g17/src/g17/ProductcellController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -475,7 +455,7 @@
     <entry file="file://$PROJECT_DIR$/g17/src/g17/ShoppingItemCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -515,32 +495,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/HistoryItemCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2387218">
-          <caret line="497" column="34" selection-start-line="497" selection-start-column="34" selection-end-line="497" selection-end-column="34" />
+        <state vertical-scroll-proportion="4.649374">
+          <caret line="332" column="75" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="75" />
           <folding>
-            <element signature="e#0#20124#0" expanded="true" />
-            <element signature="e#11094#11095#0" expanded="true" />
-            <element signature="e#11151#11152#0" expanded="true" />
-            <element signature="e#11223#11224#0" expanded="true" />
-            <element signature="e#11271#11272#0" expanded="true" />
-            <element signature="e#11333#11334#0" expanded="true" />
-            <element signature="e#11393#11394#0" expanded="true" />
-            <element signature="e#11904#11905#0" expanded="true" />
-            <element signature="e#11972#11973#0" expanded="true" />
-            <element signature="e#12451#12452#0" expanded="true" />
-            <element signature="e#12512#12513#0" expanded="true" />
-            <element signature="e#14266#14267#0" expanded="true" />
-            <element signature="e#14297#14298#0" expanded="true" />
+            <element signature="e#0#22341#0" expanded="true" />
           </folding>
         </state>
       </provider>

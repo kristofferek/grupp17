@@ -18,6 +18,10 @@ import java.util.logging.Logger;
 
 import com.sun.javafx.css.StyleClassSet;
 import java.time.chrono.Chronology;
+import javafx.animation.Animation;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -43,11 +47,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
@@ -319,6 +325,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     protected void initCartDropDown(){
         shoppingItems.clear();
         shoppingItems.addAll(IMatDataHandler.getInstance().getShoppingCart().getItems());
+        
+        if (shoppingItems.size()==0){
+            shoppingItems.add(null);
+        }
+                
         cartListView.setItems(FXCollections.observableList(shoppingItems));
         cartListView.setCellFactory(new Callback<ListView<ShoppingItem>, ListCell<ShoppingItem>>() {
             @Override
@@ -433,6 +444,56 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     public void shoppingCartChanged(CartEvent ce) {
         updateCartLabels();
         initCartDropDown();
+
+        ScaleTransition scaleAnimation = new ScaleTransition(Duration.millis(150), cartButton);
+        scaleAnimation.setByX(0.1f);
+        scaleAnimation.setByY(0.1f);
+        scaleAnimation.setCycleCount(2);
+        scaleAnimation.setAutoReverse(true);
+
+        scaleAnimation.play();
+        
+        class animationThread extends Thread {
+
+            synchronized public void run() {
+                
+                
+                    
+                
+                
+                
+                    /*RotateTransition rotation = new RotateTransition(Duration.millis(100), cartButton);
+                    rotation.setByAngle(1);
+                    //rt.setCycleCount(1);
+                    //rotation.setInterpolator(Interpolator.LINEAR);
+                    rotation.play();
+                    rotation.stop();
+                    rotation = new RotateTransition(Duration.millis(100), cartButton);
+                    rotation.setByAngle(-2);
+                    rotation.play();
+                    rotation.stop();
+                    rotation = new RotateTransition(Duration.millis(100), cartButton);
+                    rotation.setByAngle(10);
+                    rotation.play();
+                    rotation.stop();*/
+
+
+                    /*cartButton.setStyle("justbought");
+                    
+                    Background current = cartButton.getBackground();
+                    cartButton.setBackground(Background.EMPTY);
+                    
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    cartButton.setBackground(current);*/
+                 
+            }
+        }
+        
+        new animationThread().run();
     }
    
     private void updateCartLabels(){
