@@ -214,7 +214,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         bread.addProductCategory(ProductCategory.BREAD);
 
         // Chark och kött category
-        Category meat = new Category("Chark och kött", "meatimage");
+        Category meat = new Category("Chark & kött", "meatimage");
         meat.addProductCategory(ProductCategory.MEAT);
 
         // Bageri category
@@ -223,7 +223,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         drinks.addProductCategory(ProductCategory.HOT_DRINKS);
 
         //Fisk category
-        Category fish = new Category("Fisk och skaldjur", "fishimage");
+        Category fish = new Category("Fisk & skaldjur", "fishimage");
         fish.addProductCategory(ProductCategory.FISH);
 
         //Frukt category
