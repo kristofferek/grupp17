@@ -80,7 +80,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button rundturButton;
     @FXML private Button historyButton;
     @FXML private Button favoriteButton;
-    @FXML private Button listButton;
     @FXML private Button cartButton;
     @FXML private Button searchButton;
     @FXML private Button finalBuyButton;
@@ -89,11 +88,9 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private AnchorPane checkoutView;
     @FXML private AnchorPane cartAnchorPane;
     @FXML private AnchorPane historyAnchorPane;
-    @FXML private AnchorPane listAnchorPane;
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
-    @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
     @FXML private AnchorPane cartListAnchorPane;
@@ -407,21 +404,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             cartAnchorPane.setMouseTransparent(false);
             isCartShowing = true;
         }
-    }
-    
-    
-    @FXML
-    protected void listButtonActionPerformed(ActionEvent event){
-        // TODO
-        if(isListsShowing){
-            listAnchorPane.toBack();
-            isListsShowing = false;
-        }else {
-            listAnchorPane.toFront();
-            listAnchorPane.setMouseTransparent(false);
-            isListsShowing = true;
-        }
-        updateButtons(listButton);
     }
     
     @FXML
