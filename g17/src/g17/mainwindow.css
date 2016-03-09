@@ -77,7 +77,7 @@ Gammal buybutton
     -fx-background-image: url("pictures/cheese-triangular-piece-with-holes.png");
 }
 .meatimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/steak.png");
 }
 .fishimage{
     -fx-background-image: url("pictures/fish.png");
@@ -95,8 +95,8 @@ Gammal buybutton
     -fx-background-image: url("pictures/apple-and-grapes.png");
 }
 .sugarimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/cupcake-dessert.png");
 }
 .dryfoodimage{
-    -fx-background-image: url("pictures/heart-filled.png");
+    -fx-background-image: url("pictures/ear-of-wheat.png");
 }

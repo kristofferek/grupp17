@@ -319,6 +319,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 return new ShoppingItemCell();
             }
         });
+        updateCartLabels();
+        
     }
     
     protected void initCheckoutList(){
@@ -431,6 +433,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
+        updateCartLabels();
+        initCartDropDown();
+    }
+    
+    private void updateCartLabels(){
         priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
         int amount=0;
         for (ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
@@ -438,13 +445,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             }
         cartAmountLabel.setText("Antal varor: " + amount + " st");
         cartPriceLabel.setText("Totalt: " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
-        initCartDropDown();
     }
     
     @FXML
     protected void finalBuyButtonActionPerformed(ActionEvent event){
         initCheckoutList();
         checkoutView.toFront();
+        bringCartToFront();
+        finalBuyButton.setVisible(false);
         
         
         System.out.println("clicked final buy");
@@ -454,6 +462,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         if (isCartShowing){
             cartAnchorPane.toFront();
             cartAnchorPane.setMouseTransparent(false);
+            finalBuyButton.setVisible(true);
         }
     }
     //Lägger alla knappar i "unslected" kategorin förutom den tryckta
