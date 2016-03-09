@@ -137,3 +137,8 @@ Gammal buybutton
 .newbuybutton:hover {
     -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
 }
+
+.fillPicture {
+    width: auto;
+    height: auto;
+}

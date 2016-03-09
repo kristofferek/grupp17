@@ -83,7 +83,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button homeButton;
     @FXML private Button historyButton;
     @FXML private Button favoriteButton;
-    @FXML private Button listButton;
     @FXML private Button cartButton;
     @FXML private Button searchButton;
     @FXML private Button finalBuyButton;
@@ -92,11 +91,9 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private AnchorPane checkoutView;
     @FXML private AnchorPane cartAnchorPane;
     @FXML private AnchorPane historyAnchorPane;
-    @FXML private AnchorPane listAnchorPane;
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
-    @FXML private ListView listListView;
     @FXML private AnchorPane gridContainer;
     @FXML private GridPane gridpane;
     @FXML private AnchorPane cartListAnchorPane;
@@ -215,7 +212,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         bread.addProductCategory(ProductCategory.BREAD);
 
         // Chark och kött category
-        Category meat = new Category("Chark och kött", "meatimage");
+        Category meat = new Category("Chark & kött", "meatimage");
         meat.addProductCategory(ProductCategory.MEAT);
 
         // Bageri category
@@ -224,7 +221,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         drinks.addProductCategory(ProductCategory.HOT_DRINKS);
 
         //Fisk category
-        Category fish = new Category("Fisk och skaldjur", "fishimage");
+        Category fish = new Category("Fisk & skaldjur", "fishimage");
         fish.addProductCategory(ProductCategory.FISH);
 
         //Frukt category
@@ -414,21 +411,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             isCartShowing = true;
         }
     }
-    
-    
-    @FXML
-    protected void listButtonActionPerformed(ActionEvent event){
-        // TODO
-        if(isListsShowing){
-            listAnchorPane.toBack();
-            isListsShowing = false;
-        }else {
-            listAnchorPane.toFront();
-            listAnchorPane.setMouseTransparent(false);
-            isListsShowing = true;
-        }
-    }
-    
+
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event){
         // TODO
@@ -442,13 +425,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     }
    
     private void updateCartLabels(){
-        priceLabel.setText(IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        double price = IMatDataHandler.getInstance().getShoppingCart().getTotal();
+        priceLabel.setText(String.format("%.2f", price) + " kr");
         int amount=0;
         for (ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
             amount += item.getAmount();
             }
         cartAmountLabel.setText("Antal varor: " + amount + " st");
-        cartPriceLabel.setText("Totalt: " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + " kr");
+        cartPriceLabel.setText("Totalt: " + String.format("%.2f", price) + " kr");
     }
     
     @FXML
