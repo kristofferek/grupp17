@@ -10,12 +10,13 @@
 }
 
 .dropdowns{
-      -fx-background-color: #B5B5B5;
+      -fx-background-color: #e0e0e0;
 }
 
 .categorylist {
     -fx-font-size: 1.2em;
     -fx-font-weight: bold;
+    -fx-text-fill: #212121;
 }
 .nonfavourite{
     -fx-background-image: url("pictures/heart-outline.png");
@@ -51,20 +52,88 @@ Gammal buybutton
     -fx-background-radius: 6, 5;
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(5,0,0,1) , 5, 0.0 , 0 , 1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #FFFFFF;
 
 }
 .buyButton{
     -fx-background-color: #3FC905;
 }
 .button-selected {
-    -fx-text-fill: #111111;
-    -fx-background-color: #FF3F3F;
+    -fx-background-color: #D32F2F;
 }
 
 .button-unselected {
-    -fx-text-fill: #000000;
-    -fx-background-color:rgba(240,0,39);
+    -fx-background-color: #C62828;
 }
 .currentTab{
     -fx-background-color: #FF3F3F;
+}
+
+.showallimage{
+    -fx-background-image: url("pictures/fork-and-knife-in-cross.png");
+}
+.diaryimage{
+    -fx-background-image: url("pictures/cheese-triangular-piece-with-holes.png");
+}
+.meatimage{
+    -fx-background-image: url("pictures/steak.png");
+}
+.fishimage{
+    -fx-background-image: url("pictures/fish.png");
+}    
+.drinkimage{
+    -fx-background-image: url("pictures/coffee-cup.png");
+}
+.greenimage{
+    -fx-background-image: url("pictures/carrot.png");
+}
+.breadimage{
+    -fx-background-image: url("pictures/bread-silhouette-side-view.png");
+}
+.fruitimage{
+    -fx-background-image: url("pictures/apple-and-grapes.png");
+}
+.sugarimage{
+    -fx-background-image: url("pictures/cupcake-dessert.png");
+}
+.dryfoodimage{
+    -fx-background-image: url("pictures/ear-of-wheat.png");
+}
+
+.newbutton {
+    -fx-font-size: 21.0px;
+    -fx-font-family: Arial;
+    -fx-font-weight:bold;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    -fx-border-radius: 1px;
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 1px;
+    -fx-text-fill: #212121;
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+.newbutton:focused {
+    -fx-background-color: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+}
+
+.newbutton:hover {
+    -fx-background-color: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+}
+
+.newbuybutton {
+    -fx-font-size: 21.0px;
+    -fx-font-family: Arial;
+    -fx-font-weight:bold;
+    -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
+    -fx-border-radius: 1px;
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 1px;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+.newbuybutton:hover {
+    -fx-background-color: linear-gradient(to bottom, #8BC34A, #7CB342);
 }
