@@ -178,7 +178,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         System.out.println("gridContainer width: " + gridContainer.getWidth());
         double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
-        double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.90;
+        double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.94;
         
         RowConstraints con = new RowConstraints();
         con.setPrefHeight(300);
@@ -541,7 +541,10 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         if(check(nameLabel) && check(lastLabel) && check(adrLabel) && check(postLabel) &&
             check(cityLabel) && check(phoneLabel) && check(mailLabel) && check(cardNameLabel) &&
             check(cvvLabel) && check(dateLabel.getEditor())){
-
+            
+            
+            errorMsg.setText("Din order är nu bekräftad.");
+            errorMsg.getStyleClass().set(0,"greenText");
             System.out.println("Din order är nu bekräftad.");
             
             Customer cust= IMatDataHandler.getInstance().getCustomer();

@@ -68,7 +68,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="favoriteButton" fx:id="favoriteButton" alignment="CENTER" focusTraversable="false" layoutX="314.0" layoutY="5.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Favoriter" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
+                  <Button id="favoriteButton" fx:id="favoriteButton" alignment="CENTER" focusTraversable="false" layoutX="270.0" layoutY="8.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Favoriter" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -87,7 +87,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="historyButton" fx:id="historyButton" alignment="CENTER" focusTraversable="false" layoutX="464.0" layoutY="5.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Historik" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
+                  <Button id="historyButton" fx:id="historyButton" alignment="CENTER" focusTraversable="false" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Historik" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -131,7 +131,7 @@
                      <children>
                         <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ScrollPane layoutX="83.0" layoutY="14.0" prefHeight="650.0" prefWidth="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="14.0">
+                              <ScrollPane layoutX="25.0" prefHeight="650.0" prefWidth="400.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="0.0">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="398.0">
                                        <children>
