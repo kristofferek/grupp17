@@ -46,7 +46,7 @@ public class HistoryItemCell extends ListCell<Order> {
                 
                 int price = 0;
                 for(int i=0; i<item.getItems().size(); i++){
-                          price += item.getItems().get(i).getProduct().getPrice();
+                          price += item.getItems().get(i).getProduct().getPrice()*item.getItems().get(i).getAmount();
                         }
                 
                 Label name = new Label(item.getDate().toString()+" - "+price+" kr");
@@ -63,12 +63,14 @@ public class HistoryItemCell extends ListCell<Order> {
                         for(int i=0; i<item.getItems().size(); i++){
                             products.add(item.getItems().get(i).getProduct());
                         }
-                        
-                        MainWindowController.getInstance().setProductsToDisplay(products,0);
-                        MainWindowController.setToMainWindow();
-                        MainWindowController.setIsHistoryShowing(false);
-                        products.clear();
-                       }
+                    
+                    MainWindowController.getInstance().setProductsToDisplay(products,0);
+                    MainWindowController.setToMainWindow();
+                    MainWindowController.setIsHistoryShowing(false);
+                    MainWindowController.getInstance().bringCartToFront();
+
+                    products.clear();
+                    }
                     
                 });
             }

@@ -82,6 +82,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     private boolean isCartShowing = false;
     private boolean isListsShowing = false;
     private boolean isHistoryShowing = false;
+    private boolean animationPlaying = false;
     private int lastHorizontalCells = 5;
     
     @FXML private MenuBar menuBar;
@@ -181,7 +182,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         System.out.println("gridContainer width: " + gridContainer.getWidth());
         double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
-        double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.90;
+        double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.94;
         
         RowConstraints con = new RowConstraints();
         con.setPrefHeight(300);
@@ -344,12 +345,10 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         System.out.println("text: " + priceLabel.getText());
         if(priceLabel.getText().equals("0.00 kr")){
-                System.out.println("hej");
-                finalBuyButton.setVisible(false);
+            System.out.println("hej");
+            finalBuyButton.setVisible(false);
         } else {
             finalBuyButton.setVisible(true);
-                    System.out.println("hej2");
-
         }
     }
     
@@ -457,56 +456,17 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         updateCartLabels();
         initCartDropDown();
 
-        ScaleTransition scaleAnimation = new ScaleTransition(Duration.millis(150), cartButton);
-        scaleAnimation.setByX(0.1f);
-        scaleAnimation.setByY(0.1f);
-        scaleAnimation.setCycleCount(2);
-        scaleAnimation.setAutoReverse(true);
+        if(!animationPlaying){
+            animationPlaying = true;
+            ScaleTransition scaleAnimation = new ScaleTransition(Duration.millis(150), cartButton);
+            scaleAnimation.setByX(0.1f);
+            scaleAnimation.setByY(0.1f);
+            scaleAnimation.setCycleCount(2);
+            scaleAnimation.setAutoReverse(true);
 
-        scaleAnimation.play();
-        
-        
-        class animationThread extends Thread {
-
-            synchronized public void run() {
-                
-                
-                    
-                
-                
-                
-                    /*RotateTransition rotation = new RotateTransition(Duration.millis(100), cartButton);
-                    rotation.setByAngle(1);
-                    //rt.setCycleCount(1);
-                    //rotation.setInterpolator(Interpolator.LINEAR);
-                    rotation.play();
-                    rotation.stop();
-                    rotation = new RotateTransition(Duration.millis(100), cartButton);
-                    rotation.setByAngle(-2);
-                    rotation.play();
-                    rotation.stop();
-                    rotation = new RotateTransition(Duration.millis(100), cartButton);
-                    rotation.setByAngle(10);
-                    rotation.play();
-                    rotation.stop();*/
-
-
-                    /*cartButton.setStyle("justbought");
-                    
-                    Background current = cartButton.getBackground();
-                    cartButton.setBackground(Background.EMPTY);
-                    
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    cartButton.setBackground(current);*/
-                 
-            }
+            scaleAnimation.play();
+            animationPlaying = false;
         }
-        
-        new animationThread().run();
     }
    
     private void updateCartLabels(){
@@ -535,7 +495,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         if (isCartShowing){
             cartAnchorPane.toFront();
             cartAnchorPane.setMouseTransparent(false);
-            finalBuyButton.setVisible(true);
+            //finalBuyButton.setVisible(true);
         }
     }
     @FXML
