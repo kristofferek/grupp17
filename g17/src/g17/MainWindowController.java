@@ -342,12 +342,10 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         System.out.println("text: " + priceLabel.getText());
         if(priceLabel.getText().equals("0.00 kr")){
-                System.out.println("hej");
-                finalBuyButton.setVisible(false);
+            System.out.println("hej");
+            finalBuyButton.setVisible(false);
         } else {
             finalBuyButton.setVisible(true);
-                    System.out.println("hej2");
-
         }
     }
     
@@ -494,7 +492,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         if (isCartShowing){
             cartAnchorPane.toFront();
             cartAnchorPane.setMouseTransparent(false);
-            finalBuyButton.setVisible(true);
+            //finalBuyButton.setVisible(true);
         }
     }
     @FXML
