@@ -226,7 +226,7 @@
                               <Label layoutX="950.0" layoutY="228.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
                               <Label layoutX="956.0" layoutY="288.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
 
-                              <Button layoutX="770.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="newbuybutton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
+                              <Button fx:id="orderButton" layoutX="770.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="newbuybutton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
 
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -258,6 +258,7 @@
                                     <Font size="48.0" />
                                  </font>
                               </Label>
+                              <AnchorPane layoutX="674.0" layoutY="363.0" prefHeight="117.0" prefWidth="485.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="363.0" />
                            </children>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">

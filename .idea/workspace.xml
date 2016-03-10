@@ -32,13 +32,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="332" column="75" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.59210527">
+              <caret line="560" column="48" selection-start-line="560" selection-start-column="48" selection-end-line="560" selection-end-column="48" />
               <folding>
-                <element signature="e#0#22341#0" expanded="true" />
+                <element signature="e#0#23190#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#11397#11398#0" expanded="true" />
+                <element signature="e#11454#11455#0" expanded="true" />
+                <element signature="e#11636#11637#0" expanded="true" />
+                <element signature="e#11696#11697#0" expanded="true" />
+                <element signature="e#12207#12208#0" expanded="true" />
+                <element signature="e#12275#12276#0" expanded="true" />
+                <element signature="e#12865#12866#0" expanded="true" />
+                <element signature="e#12926#12927#0" expanded="true" />
+                <element signature="e#15009#15010#0" expanded="true" />
+                <element signature="e#15040#15041#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainwindow.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainwindow.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30232558">
-              <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -115,8 +126,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/g17/src/g17/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/g17/src/g17/MainWindowController.java" />
         <option value="$PROJECT_DIR$/g17/src/g17/mainwindow.css" />
+        <option value="$PROJECT_DIR$/g17/src/g17/MainWindowController.java" />
       </list>
     </option>
   </component>
@@ -394,6 +405,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c3536297-19ea-46ef-88ec-933583c5ed3b" name="Default" comment="" />
@@ -415,7 +429,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29277107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29277107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -431,6 +445,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -503,21 +525,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="332" column="75" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#22341#0" expanded="true" />
-          </folding>
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/g17/src/g17/mainwindow.css">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30232558">
-          <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.33273703">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g17/src/g17/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59210527">
+          <caret line="560" column="48" selection-start-line="560" selection-start-column="48" selection-end-line="560" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#23190#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#11397#11398#0" expanded="true" />
+            <element signature="e#11454#11455#0" expanded="true" />
+            <element signature="e#11636#11637#0" expanded="true" />
+            <element signature="e#11696#11697#0" expanded="true" />
+            <element signature="e#12207#12208#0" expanded="true" />
+            <element signature="e#12275#12276#0" expanded="true" />
+            <element signature="e#12865#12866#0" expanded="true" />
+            <element signature="e#12926#12927#0" expanded="true" />
+            <element signature="e#15009#15010#0" expanded="true" />
+            <element signature="e#15040#15041#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

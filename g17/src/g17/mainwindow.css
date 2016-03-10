@@ -33,6 +33,9 @@
 .redText{
     -fx-text-fill: #ff0000;
 }
+.blackText{
+    -fx-text-fill: #000000;
+}
 /*
 ----KNAPPAJ!----
 */

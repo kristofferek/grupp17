@@ -122,6 +122,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private TextField cvvLabel;
     @FXML private ChoiceBox monthBox;
     @FXML private ChoiceBox yearBox;
+
+    @FXML private Button orderButton;
     
     @FXML private DatePicker dateLabel;
     
@@ -172,6 +174,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     
     protected void addDisplayProducts(int horizontalCells){
         //gridContainer.autosize();
+        orderButton.setText("Slutför");
         gridpane.getChildren().clear();
         gridContainer.autosize();
         gridpane.setMaxWidth(1626);
@@ -371,7 +374,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         
         cardNameLabel.setText(card.getHoldersName());
         cardLabel.setText(card.getCardNumber());
-        cvvLabel.setText(card.getVerificationCode()+"");
+        cvvLabel.setText(card.getVerificationCode() + "");
         initCardComboBox();
 
         errorMsg.setVisible(false);
@@ -538,12 +541,20 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void placeOrderButtonActionPerformed(ActionEvent event){
         
-        if(check(nameLabel) && check(lastLabel) && check(adrLabel) && check(postLabel) &&
+        if(IMatDataHandler.getInstance().getShoppingCart().getItems().size()<1){
+            errorMsg.setText("Din varukorg är tom");
+            errorMsg.setVisible(true);
+        }else if(check(nameLabel) && check(lastLabel) && check(adrLabel) && check(postLabel) &&
             check(cityLabel) && check(phoneLabel) && check(mailLabel) && check(cardNameLabel) &&
             check(cvvLabel) && check(dateLabel.getEditor())){
 
+            errorMsg.setVisible(false);
+
             System.out.println("Din order är nu bekräftad.");
-            
+
+
+            orderButton.setText("Din beställning är på väg!");
+
             Customer cust= IMatDataHandler.getInstance().getCustomer();
             cust.setFirstName(nameLabel.getText());
             cust.setLastName(lastLabel.getText());
@@ -565,41 +576,43 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             IMatDataHandler.getInstance().getShoppingCart().clear();
         }
         else {
+            errorMsg.setText("Var god fyll i alla fält");
             errorMsg.setVisible(true);
             if(!check(nameLabel)){
+                System.out.println(namnText.getStyleClass().toString());
                 namnText.getStyleClass().set(0,"redText");
             }else{
-                namnText.getStyleClass().set(0,"label");
+                namnText.getStyleClass().set(0,"blackText");
             }
             if(!check(lastLabel)){
                 efternamnText.getStyleClass().set(0,"redText");
             }else{
-                efternamnText.getStyleClass().set(0,"label");
+                efternamnText.getStyleClass().set(0,"blackText");
             }
             if(!check(adrLabel)){
                 adressText.getStyleClass().set(0,"redText");
             }else{
-                adressText.getStyleClass().set(0,"label");
+                adressText.getStyleClass().set(0,"blackText");
             }
             if(!check(postLabel)){
                 postText.getStyleClass().set(0,"redText");
             }else{
-                postText.getStyleClass().set(0,"label");
+                postText.getStyleClass().set(0,"blackText");
             }
             if(!check(cityLabel)){
                 postortText.getStyleClass().set(0,"redText");
             }else{
-                postortText.getStyleClass().set(0,"label");
+                postortText.getStyleClass().set(0,"blackText");
             }
             if(!check(phoneLabel)){
                 telefonText.getStyleClass().set(0, "redText");
             }else{
-                telefonText.getStyleClass().set(0,"label");
+                telefonText.getStyleClass().set(0,"blackText");
             }
             if(!check(mailLabel)){
                 mailText.getStyleClass().set(0,"redText");
             }else{
-                mailText.getStyleClass().set(0,"label");
+                mailText.getStyleClass().set(0,"blackText");
             }
         }
     }
