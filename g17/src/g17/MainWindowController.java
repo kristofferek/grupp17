@@ -339,6 +339,15 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         });
         updateCartLabels();
         
+        System.out.println("text: " + priceLabel.getText());
+        if(priceLabel.getText().equals("0.00 kr")){
+                System.out.println("hej");
+                finalBuyButton.setVisible(false);
+        } else {
+            finalBuyButton.setVisible(true);
+                    System.out.println("hej2");
+
+        }
     }
     
     protected void initCheckoutList(){
@@ -452,6 +461,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         scaleAnimation.setAutoReverse(true);
 
         scaleAnimation.play();
+        
         
         class animationThread extends Thread {
 

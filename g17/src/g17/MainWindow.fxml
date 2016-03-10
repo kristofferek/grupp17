@@ -170,7 +170,7 @@
                                        </children>
                                     </FlowPane>
                                     <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="2.0" prefWidth="325.0" style="-fx-background-color: #909090;" AnchorPane.bottomAnchor="128.0" AnchorPane.rightAnchor="0.0" />
-                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="325.0" styleClass="newbuybutton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <Button fx:id="finalBuyButton" layoutY="600.0" mnemonicParsing="false" onAction="#finalBuyButtonActionPerformed" prefHeight="128.0" prefWidth="325.0" styleClass="newbuybutton" text="Slutför köp" textAlignment="CENTER" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <font>
                                           <Font name="System Bold" size="41.0" />
                                        </font>
