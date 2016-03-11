@@ -38,28 +38,9 @@
         <URL value="@mainwindow.css" />
     </stylesheets>
    <children>
-      <MenuBar fx:id="menuBar" layoutY="-2.0" prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <BorderPane layoutY="32.0" prefHeight="688.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+      <BorderPane prefHeight="1000.0" prefWidth="1901.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="58.0" prefWidth="1280.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
+            <AnchorPane cache="true" cacheHint="SCALE_AND_ROTATE" prefHeight="0.0" prefWidth="1901.0" styleClass="topbar" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
                   <Button id="homeButton" fx:id="homeButton" alignment="CENTER" focusTraversable="false" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Hem" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="8.0">
                      <graphic>
@@ -67,7 +48,8 @@
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor></Button>
+                     </cursor>
+                  </Button>
                   <Button id="favoriteButton" fx:id="favoriteButton" alignment="CENTER" focusTraversable="false" layoutX="270.0" layoutY="8.0" mnemonicParsing="false" onAction="#favoriteButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Favoriter" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -78,19 +60,23 @@
                               <Image url="@pictures/heart-filled.png" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
+                     </graphic>
+                  </Button>
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" onKeyPressed="#searchTextFieldActionPreformed" prefHeight="48.0" prefWidth="350.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="8.0">
                      <font>
                         <Font size="20.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <Button id="searchButton" fx:id="searchButton" focusTraversable="false" layoutX="1407.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="53.0" prefWidth="65.0" styleClass="newbutton" text="Sök" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="429.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor></Button>
+                     </cursor>
+                  </Button>
                   <Button id="historyButton" fx:id="historyButton" alignment="CENTER" focusTraversable="false" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" onAction="#historyButtonActionPerformed" prefWidth="150.0" styleClass="newbutton" text="Historik" wrapText="true" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor></Button>
+                     </cursor>
+                  </Button>
                   <Button id="cartButton" fx:id="cartButton" alignment="CENTER" focusTraversable="false" layoutX="1540.0" layoutY="5.0" mnemonicParsing="false" onAction="#cartButtonActionPerformed" prefHeight="48.0" prefWidth="325.0" styleClass="newbuybutton" wrapText="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <AnchorPane prefHeight="0.0">
@@ -100,11 +86,13 @@
                                     <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" text="0 kr" textAlignment="CENTER" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
-                                       </font></Label>
+                                       </font>
+                                    </Label>
                                     <Label alignment="CENTER" contentDisplay="CENTER" text="Visa kundvagn" textAlignment="CENTER" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
-                                       </font></Label>
+                                       </font>
+                                    </Label>
                                  </children>
                               </VBox>
                            </children>
@@ -185,23 +173,6 @@
                               <Insets bottom="20.0" left="1285.0" right="20.0" />
                            </StackPane.margin>
                         </AnchorPane>
-                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
-                          <content>
-                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #c9c9c9;">
-                                 <children>
-                                    <GridPane fx:id="gridpane" prefHeight="907.0" prefWidth="1629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                      <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </ScrollPane>
                         <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass">
                            <children>
                               <TextField fx:id="nameLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="129.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="129.0" />
@@ -244,9 +215,9 @@
                               <Label layoutX="744.0" layoutY="201.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
                               <Label layoutX="926.0" layoutY="201.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
                   
-                                                                                                                                                            <Button fx:id="orderButton" layoutX="744.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="newbuybutton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
+                                                                                                                                                                                                <Button fx:id="orderButton" layoutX="744.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="newbuybutton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
                   
-                                                                                                                                                               <cursor>
+                                                                                                                                                                                                   <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                                  <font>
@@ -278,6 +249,58 @@
                               <AnchorPane layoutX="674.0" layoutY="363.0" prefHeight="117.0" prefWidth="485.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="363.0" />
                            </children>
                         </AnchorPane>
+                        <AnchorPane id="finalView" fx:id="finalView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Text layoutX="512.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redText" text="Tack för att du handlar hos oss på iMat!">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="553.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimerat leveranstid:" wrappingWidth="170.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="690.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris:" wrappingWidth="34.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="leveransTid" layoutX="736.0" layoutY="413.0" text="Label">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="slutPris" fx:id="slutPris" layoutX="736.0" layoutY="467.0" text="Label">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button id="finishCloseButton" fx:id="finalShutDownButton" layoutX="694.0" layoutY="576.0" mnemonicParsing="false" onAction="#finalShutDownButtonActionPerformed" text="Avsluta Programmet" />
+                              <Text layoutX="614.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du kan hitta ordern under &quot;Historik&quot;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">
+                          <content>
+                            <AnchorPane fx:id="gridContainer" minHeight="907.0" minWidth="0.0" style="-fx-background-color: #c9c9c9;">
+                                 <children>
+                                    <GridPane fx:id="gridpane" prefHeight="907.0" prefWidth="1629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
                      </children>
                   </StackPane>
                </children>

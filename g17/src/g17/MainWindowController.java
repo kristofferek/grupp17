@@ -74,16 +74,16 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class MainWindowController implements Initializable, ShoppingCartListener {
 
     private List<Category> listViewCategories = new ArrayList<>();
-    private List<ShoppingItem> shoppingItems = new ArrayList<>();  
+    private List<ShoppingItem> shoppingItems = new ArrayList<>();
     private List<Order> orderHistory = new ArrayList<>();
     
     private static MainWindowController instance;
     private int amountToDisplay;
     private boolean isCartShowing = false;
-    private boolean isListsShowing = false;
     private boolean isHistoryShowing = false;
     private boolean animationPlaying = false;
     private int lastHorizontalCells = 5;
+    int finalPrice;
     
     @FXML private MenuBar menuBar;
     @FXML private TextField searchTextField;
@@ -92,12 +92,15 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button favoriteButton;
     @FXML private Button cartButton;
     @FXML private Button searchButton;
+    @FXML private Button finalShutDownButton;
+
     @FXML private Button finalBuyButton;
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
     @FXML private AnchorPane checkoutView;
     @FXML private AnchorPane cartAnchorPane;
     @FXML private AnchorPane historyAnchorPane;
+    @FXML private AnchorPane finalView;
     @FXML private ListView categoryListView;
     @FXML private ListView historyListView;
     @FXML private ListView cartListView;
@@ -142,6 +145,9 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Label postortText;
     @FXML private Label telefonText;
     @FXML private Label mailText;
+    @FXML private Label slutPris;
+    @FXML private Label leveransTid;
+    
 
     /**
      * Initializes the controller class.
@@ -485,6 +491,12 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         finalBuyButton.setVisible(false);        
     }
     
+    @FXML
+    protected void finalShutDownButtonActionPerformed(ActionEvent event){    
+        IMatDataHandler.getInstance().shutDown();
+        System.exit(0);
+    }
+    
     protected void bringCartToFront(){
         if (isCartShowing){
             cartAnchorPane.toFront();
@@ -509,8 +521,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             errorMsg.setVisible(false);
 
             System.out.println("Din order är nu bekräftad.");
-
-
+        
             orderButton.setText("Din beställning är på väg!");
 
             Customer cust= IMatDataHandler.getInstance().getCustomer();
@@ -532,6 +543,18 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             
             IMatDataHandler.getInstance().placeOrder();
             IMatDataHandler.getInstance().getShoppingCart().clear();
+            
+            orderHistory.clear();
+            orderHistory.addAll(IMatDataHandler.getInstance().getOrders());
+            finalPrice = 0;
+            for(int i=0; i<orderHistory.get(orderHistory.size()-1).getItems().size(); i++){               
+                finalPrice += orderHistory.get(orderHistory.size()-1).getItems().get(i).getTotal();                          
+            }        
+            
+            leveransTid.setText(dateLabel.getValue().toString());
+            slutPris.setText(Integer.toString(finalPrice)+" kr");
+            finalView.toFront();
+            System.out.print("finalView");
         }
         else {
             errorMsg.setText("Var god fyll i alla fält");
