@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -30,8 +31,9 @@ public class G17 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"),bundle);
            
         Scene scene = new Scene(root, 1280, 720);   
-        
-        primaryStage.setTitle("iMat");
+        primaryStage.getIcons().add(new Image("g17/pictures/imat.png"));
+        primaryStage.setTitle("Imat - Mathandel");
+
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(1280.0);
         primaryStage.setMinHeight(720.0); 
