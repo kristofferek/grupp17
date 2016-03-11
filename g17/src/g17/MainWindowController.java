@@ -213,7 +213,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
                 gridpane.getRowConstraints().add(con);
             }
         } catch (IOException ex) {
-            System.out.println("catched");
             ex.printStackTrace();
         }
         gridpane.autosize();
@@ -343,9 +342,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         });
         updateCartLabels();
         
-        System.out.println("text: " + priceLabel.getText());
         if(priceLabel.getText().equals("0.00 kr")){
-            System.out.println("hej");
             finalBuyButton.setVisible(false);
         } else {
             finalBuyButton.setVisible(true);
@@ -485,10 +482,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         initCheckoutList();
         checkoutView.toFront();
         bringCartToFront();
-        finalBuyButton.setVisible(false);
-        
-        
-        System.out.println("clicked final buy");
+        finalBuyButton.setVisible(false);        
     }
     
     protected void bringCartToFront(){
