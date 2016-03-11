@@ -64,7 +64,7 @@
                   </Button>
                   <TextField id="searchTextField" fx:id="searchTextField" alignment="TOP_LEFT" layoutX="1180.0" layoutY="7.0" onKeyPressed="#searchTextFieldActionPreformed" prefHeight="48.0" prefWidth="350.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="8.0">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="21.0" />
                      </font>
                   </TextField>
                   <Button id="searchButton" fx:id="searchButton" focusTraversable="false" layoutX="1407.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="53.0" prefWidth="65.0" styleClass="newbutton" text="Sök" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="429.0" AnchorPane.topAnchor="8.0">
@@ -117,19 +117,6 @@
                <children>
                   <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ScrollPane layoutX="25.0" prefHeight="650.0" prefWidth="400.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="0.0">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="398.0">
-                                       <children>
-                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="648.0" prefWidth="398.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                       </children>
-                                    </AnchorPane>
-                                </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane id="listAnchorPane" fx:id="listAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0" />
                         <AnchorPane id="cartAnchorPane" fx:id="cartAnchorPane" mouseTransparent="true" prefHeight="759.0" prefWidth="1089.0">
                            <children>
@@ -173,41 +160,6 @@
                               <Insets bottom="20.0" left="1285.0" right="20.0" />
                            </StackPane.margin>
                         </AnchorPane>
-                        <AnchorPane id="finalView" fx:id="finalView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                           <children>
-                              <Text layoutX="512.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redText" text="Tack för att du handlar hos oss på iMat!">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="553.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimerat leveranstid:" wrappingWidth="170.3828125">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="690.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris:" wrappingWidth="34.3828125">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                              <Label fx:id="leveransTid" layoutX="736.0" layoutY="413.0" text="Label">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label id="slutPris" fx:id="slutPris" layoutX="736.0" layoutY="467.0" text="Label">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Button id="finishCloseButton" fx:id="finalShutDownButton" layoutX="694.0" layoutY="576.0" mnemonicParsing="false" onAction="#finalShutDownButtonActionPerformed" text="Avsluta Programmet" />
-                              <Text layoutX="614.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du kan hitta ordern under &quot;Historik&quot;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass">
                            <children>
                               <TextField fx:id="nameLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="129.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="129.0" />
@@ -248,7 +200,7 @@
                               <TextField fx:id="cardLabel" layoutX="743.0" layoutY="223.0" prefHeight="31.0" prefWidth="158.0" />
                               <TextField fx:id="cvvLabel" layoutX="927.0" layoutY="223.0" prefHeight="31.0" prefWidth="53.0" />
                               <Label layoutX="744.0" layoutY="201.0" prefHeight="21.0" prefWidth="129.0" text="Kortnummer" />
-                              <Label layoutX="926.0" layoutY="201.0" prefHeight="21.0" prefWidth="129.0" text="CVV" />
+                              <Label layoutX="926.0" layoutY="201.0" prefHeight="21.0" prefWidth="129.0" text="CVC" />
                   
                                                                                                                                                                                                 <Button fx:id="orderButton" layoutX="744.0" layoutY="658.0" mnemonicParsing="false" onAction="#placeOrderButtonActionPerformed" prefHeight="126.0" prefWidth="310.0" styleClass="newbuybutton" text="Slutför" textAlignment="CENTER" textFill="WHITE">
                   
@@ -270,7 +222,7 @@
                               <CheckBox fx:id="box11" focusTraversable="false" layoutX="926.0" layoutY="520.0" mnemonicParsing="false" prefWidth="129.0" text="11:00 - 14:00" />
                               <CheckBox fx:id="box14" focusTraversable="false" layoutX="746.0" layoutY="566.0" mnemonicParsing="false" text="14:00 - 17:00" />
                               <CheckBox fx:id="box17" focusTraversable="false" layoutX="926.0" layoutY="566.0" mnemonicParsing="false" prefWidth="129.0" text="17:00 - 20:00" />
-                              <Label layoutX="745.0" layoutY="485.0" text="Tid (Välj minst ett alternativ)" />
+                              <Label layoutX="745.0" layoutY="485.0" text="Önskemål om tid" />
                               <Label layoutX="746.0" layoutY="141.0" prefHeight="21.0" prefWidth="129.0" text="Kortets innehavare" />
                               <ChoiceBox fx:id="monthBox" layoutX="744.0" layoutY="283.0" prefHeight="31.0" prefWidth="89.0" />
                               <Label layoutX="850.0" layoutY="288.0" prefHeight="21.0" prefWidth="50.0" text="Månad" />
@@ -296,6 +248,62 @@
                                     <Font size="21.0" />
                                  </font>
                               </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="historyAnchorPane" fx:id="historyAnchorPane" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="25.0" prefHeight="650.0" prefWidth="400.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="398.0">
+                                       <children>
+                                          <ListView id="historyListView" fx:id="historyListView" prefHeight="648.0" prefWidth="398.0" styleClass="dropdowns" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="finalView" fx:id="finalView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Text layoutX="512.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redText" text="Tack för att du handlar hos oss på iMat!">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="553.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimerat leveranstid:" wrappingWidth="170.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="690.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris:" wrappingWidth="34.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="leveransTid" layoutX="736.0" layoutY="413.0" text="Datum för leverans">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="slutPris" fx:id="slutPris" layoutX="736.0" layoutY="467.0" text="Totalt pris">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="finalShutDownButton" layoutX="746.0" layoutY="574.0" mnemonicParsing="false" onAction="#finalShutDownButtonActionPerformed" text="Avsluta Programmet">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Button>
+                              <Text layoutX="601.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du kan nu hitta ordern under &quot;Historik&quot;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="finalBackButton" layoutX="601.0" layoutY="574.0" mnemonicParsing="false" onAction="#finalBackButtonActionPerformed" text="Tillbaka till butik">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">

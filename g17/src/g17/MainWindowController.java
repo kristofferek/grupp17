@@ -93,6 +93,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button cartButton;
     @FXML private Button searchButton;
     @FXML private Button finalShutDownButton;
+    @FXML private Button finalBackButton;
 
     @FXML private Button finalBuyButton;
     @FXML private Label priceLabel;
@@ -453,7 +454,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         // TODO
         mainView.toFront();
     }
-
+    
+     @FXML
+    protected void finalBackButtonActionPerformed(ActionEvent event){
+        mainView.toFront();
+    }
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         updateCartLabels();
