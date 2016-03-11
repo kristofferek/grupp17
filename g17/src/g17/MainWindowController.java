@@ -489,7 +489,11 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         if (isCartShowing){
             cartAnchorPane.toFront();
             cartAnchorPane.setMouseTransparent(false);
-            //finalBuyButton.setVisible(true);
+            if(priceLabel.getText().equals("0.00 kr")){
+                finalBuyButton.setVisible(false);
+            } else {
+                finalBuyButton.setVisible(true);
+            }
         }
     }
     @FXML
