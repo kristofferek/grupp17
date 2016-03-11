@@ -458,6 +458,9 @@ public class MainWindowController implements Initializable, ShoppingCartListener
      @FXML
     protected void finalBackButtonActionPerformed(ActionEvent event){
         mainView.toFront();
+        cartAnchorPane.toBack();
+        setProductsToDisplay(null, 5);
+        isCartShowing = false;
     }
     @Override
     public void shoppingCartChanged(CartEvent ce) {
@@ -516,8 +519,8 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML
     protected void placeOrderButtonActionPerformed(ActionEvent event){
         
-        if(IMatDataHandler.getInstance().getShoppingCart().getItems().size()<1){
-            errorMsg.setText("Din varukorg är tom");
+        if(IMatDataHandler.getInstance().getShoppingCart().getItems().size() < 1){
+            errorMsg.setText("Din varukorg är tom"); 
             errorMsg.setVisible(true);
         }else if(check(nameLabel) && check(lastLabel) && check(adrLabel) && check(postLabel) &&
             check(cityLabel) && check(phoneLabel) && check(mailLabel) && check(cardNameLabel) &&
