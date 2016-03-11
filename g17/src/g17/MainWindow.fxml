@@ -33,7 +33,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g17.MainWindowController">
     <stylesheets>
         <URL value="@mainwindow.css" />
     </stylesheets>
@@ -173,6 +173,41 @@
                               <Insets bottom="20.0" left="1285.0" right="20.0" />
                            </StackPane.margin>
                         </AnchorPane>
+                        <AnchorPane id="finalView" fx:id="finalView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Text layoutX="512.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redText" text="Tack för att du handlar hos oss på iMat!">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="553.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimerat leveranstid:" wrappingWidth="170.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="690.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris:" wrappingWidth="34.3828125">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="leveransTid" layoutX="736.0" layoutY="413.0" text="Label">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label id="slutPris" fx:id="slutPris" layoutX="736.0" layoutY="467.0" text="Label">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button id="finishCloseButton" fx:id="finalShutDownButton" layoutX="694.0" layoutY="576.0" mnemonicParsing="false" onAction="#finalShutDownButtonActionPerformed" text="Avsluta Programmet" />
+                              <Text layoutX="614.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du kan hitta ordern under &quot;Historik&quot;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
                         <AnchorPane id="checkoutView" fx:id="checkoutView" style="-fx-background-color: #f2f2f2;" styleClass="mainFxmlClass">
                            <children>
                               <TextField fx:id="nameLabel" alignment="CENTER_RIGHT" layoutX="196.0" layoutY="129.0" prefHeight="31.0" prefWidth="240.0" AnchorPane.topAnchor="129.0" />
@@ -246,42 +281,21 @@
                                     <Font size="48.0" />
                                  </font>
                               </Label>
-                              <AnchorPane layoutX="674.0" layoutY="363.0" prefHeight="117.0" prefWidth="485.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="363.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane id="finalView" fx:id="finalView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                           <children>
-                              <Text layoutX="512.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="redText" text="Tack för att du handlar hos oss på iMat!">
+                              <Label layoutX="118.0" layoutY="63.0" text="Steg 1.">
                                  <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="553.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimerat leveranstid:" wrappingWidth="170.3828125">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="690.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris:" wrappingWidth="34.3828125">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Text>
-                              <Label fx:id="leveransTid" layoutX="736.0" layoutY="413.0" text="Label">
-                                 <font>
-                                    <Font size="18.0" />
+                                    <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Label id="slutPris" fx:id="slutPris" layoutX="736.0" layoutY="467.0" text="Label">
+                              <Label layoutX="652.0" layoutY="60.0" text="Steg 2.">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="21.0" />
                                  </font>
                               </Label>
-                              <Button id="finishCloseButton" fx:id="finalShutDownButton" layoutX="694.0" layoutY="576.0" mnemonicParsing="false" onAction="#finalShutDownButtonActionPerformed" text="Avsluta Programmet" />
-                              <Text layoutX="614.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du kan hitta ordern under &quot;Historik&quot;">
+                              <Label layoutX="652.0" layoutY="371.0" text="Steg 3.">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font size="21.0" />
                                  </font>
-                              </Text>
+                              </Label>
                            </children>
                         </AnchorPane>
                         <ScrollPane id="mainView" fx:id="mainView" style="-fx-background-color: #C0C0C0;">

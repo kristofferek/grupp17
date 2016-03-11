@@ -28,14 +28,16 @@ public class G17 extends Application {
         
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/g17");
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"),bundle);
-        //Parent root2 = FXMLLoader.load(getClass().getResource("productcell.fxml"),bundle);
-        
-        //Scene scene = new Scene(root, 1280, 720);
-        Scene scene = new Scene(root, 1280, 720);
+           
+        Scene scene = new Scene(root, 1280, 720);   
         
         primaryStage.setTitle("iMat");
         primaryStage.setScene(scene);
+        primaryStage.setMinWidth(1280.0);
+        primaryStage.setMinHeight(720.0); 
+        primaryStage.setMaximized(true);
         primaryStage.show();
+        
     }
     
     @Override
