@@ -51,10 +51,6 @@ public class CategoryCell extends ListCell<Category>{
                 img.getStyleClass().add(item.getCssStyle());
                 img.setMinWidth(64);
                 img.setMinHeight(64);
-                img.setImage(new Image("file:pictures/fish.png"));
-                //img.setFitHeight(74);
-                //img.setFitWidth(74);
-                //img.getStyleClass().add(item.getCssStyle());
                 grid.add(img, 0, 0);
                 
                 Label name = new Label(item.getCategoryName());

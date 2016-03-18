@@ -73,6 +73,8 @@ public class ProductcellController implements Initializable {
     }
     
     private void setProductAmount(int amount){
+        
+        //limit input prompt 1 <= value <= 99
         if(amount < 1){
             amount = 1;
         } else if(amount > 99){
@@ -100,6 +102,7 @@ public class ProductcellController implements Initializable {
     }
     
     private void correctProductAmountTextField(){
+        //conversion of string to int value, corrects problems if any occur
         try{
             if(!productAmountTextField.getText().equals("")){
                 int amount = Integer.parseInt(productAmountTextField.getText());
@@ -131,6 +134,7 @@ public class ProductcellController implements Initializable {
     }
     @FXML
     protected void addFavouriteActionPerformed(ActionEvent event) {
+        //toggling favorite for product
         favouriteButton.getStyleClass().clear();
         if (IMatDataHandler.getInstance().favorites().contains(product)) {
             IMatDataHandler.getInstance().removeFavorite(product);

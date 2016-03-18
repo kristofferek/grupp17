@@ -27,7 +27,6 @@ public class HistoryItemCell extends ListCell<Order> {
     
     @Override 
     protected void updateItem(Order item, boolean empty) {
-        // calling super here is very important - don't skip this!
         super.updateItem(item, empty);
         
         if (item != null){
