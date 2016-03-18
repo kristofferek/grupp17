@@ -94,7 +94,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private Button searchButton;
     @FXML private Button finalShutDownButton;
     @FXML private Button finalBackButton;
-
     @FXML private Button finalBuyButton;
     @FXML private Label priceLabel;
     @FXML private ScrollPane mainView;
@@ -119,17 +118,14 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     @FXML private TextField cityLabel;
     @FXML private TextField phoneLabel;
     @FXML private TextField mailLabel;
-    
-    @FXML private RadioButton masterRadio;
-    @FXML private RadioButton visaRadio;
     @FXML private TextField cardNameLabel;
     @FXML private TextField cardLabel;
     @FXML private TextField cvvLabel;
+    @FXML private RadioButton masterRadio;
+    @FXML private RadioButton visaRadio;
+    @FXML private Button orderButton;
     @FXML private ChoiceBox monthBox;
     @FXML private ChoiceBox yearBox;
-
-    @FXML private Button orderButton;
-    
     @FXML private DatePicker dateLabel;
     
     @FXML private CheckBox box8;
@@ -187,7 +183,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         gridContainer.autosize();
         gridpane.setMaxWidth(1626);
         
-        System.out.println("gridContainer width: " + gridContainer.getWidth());
         double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
         double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.94;
         
@@ -462,6 +457,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         setProductsToDisplay(null, 5);
         isCartShowing = false;
     }
+    
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         updateCartLabels();
@@ -562,7 +558,7 @@ public class MainWindowController implements Initializable, ShoppingCartListener
             leveransTid.setText(dateLabel.getValue().toString());
             slutPris.setText(Integer.toString(finalPrice)+" kr");
             finalView.toFront();
-            System.out.print("finalView");
+
         }
         else {
             errorMsg.setText("Var god fyll i alla fält");

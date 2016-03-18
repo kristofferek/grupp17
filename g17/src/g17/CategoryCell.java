@@ -51,8 +51,7 @@ public class CategoryCell extends ListCell<Category>{
                 img.getStyleClass().add(item.getCssStyle());
                 img.setMinWidth(64);
                 img.setMinHeight(64);
-                //ImageView img = new ImageView();
-                //img.setImage(new Image("file:pictures/fish.png"));
+                img.setImage(new Image("file:pictures/fish.png"));
                 //img.setFitHeight(74);
                 //img.setFitWidth(74);
                 //img.getStyleClass().add(item.getCssStyle());
@@ -68,7 +67,6 @@ public class CategoryCell extends ListCell<Category>{
                 this.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        System.out.println("In mouse event");
                         MainWindowController.setToMainWindow();
                         if(item.getCategoryName().equalsIgnoreCase("Visa allt")){
                             MainWindowController.getInstance().setProductsToDisplay(IMatDataHandler.getInstance().getProducts(), 0);
