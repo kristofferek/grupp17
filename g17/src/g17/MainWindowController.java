@@ -177,13 +177,12 @@ public class MainWindowController implements Initializable, ShoppingCartListener
     }
     
     protected void addDisplayProducts(int horizontalCells){
-        //gridContainer.autosize();
         orderButton.setText("Slutför");
         gridpane.getChildren().clear();
         gridContainer.autosize();
         gridpane.setMaxWidth(1626);
         
-        double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane
+        double scaleX = (((gridContainer.getWidth()) / 5.0) * (double)1/325) * 0.97;        //scale to fit in gridpane 97% width, 94% height
         double scaleY = ((gridContainer.getHeight() / 3.0) * (double)1/409) * 0.94;
         
         RowConstraints con = new RowConstraints();
@@ -292,7 +291,6 @@ public class MainWindowController implements Initializable, ShoppingCartListener
         listViewCategories.add(sweets);
 
         categoryListView.setItems(FXCollections.observableList(listViewCategories));
-        //TODO
         categoryListView.getStyleClass().clear();
         categoryListView.getStyleClass().add("currentTab");
         categoryListView.setCellFactory(new Callback<ListView<Category>, ListCell<Category>>() {
